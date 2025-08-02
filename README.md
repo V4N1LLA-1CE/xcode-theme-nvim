@@ -125,4 +125,3 @@ When reporting issues, please include:
 
 - Inspired by Apple's Xcode 16 Default Dark theme
 - Built for the Neovim community
-- Thanks to all plugin authors for their excellent work
