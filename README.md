@@ -1,6 +1,16 @@
 # Xcodedark Theme for Neovim
 
-A neovim theme that mimics xcodedark from xcode16. I was inspired by xcode theme as I thought it was super clean in my iOS development course in university, so I decided to make a version that is kind off accurate for my main languages (Go, Typescript, and hopefully Java soon)
+A neovim theme that mimics xcodedark from xcode16. I was inspired by xcode theme as I thought it was super clean in my iOS development course in university, so I decided to make a version that is kind off accurate for my main languages (Go, Typescript, and hopefully Java soon). 
+
+NOTE: The theme will work for other languages as well, but colour usage for language features may not be accurate to xcode outside of Go and Typescript.
+
+## Go Development
+<img width="1507" height="889" alt="Screenshot 2025-08-02 at 10 42 41 pm" src="https://github.com/user-attachments/assets/43bf2372-e33e-4210-a7d5-e64516d27d81" />
+<img width="1507" height="889" alt="Screenshot 2025-08-02 at 10 43 43 pm" src="https://github.com/user-attachments/assets/f43243de-732c-4ea5-945d-b7715e6927ab" />
+
+## Typescript/React Development
+<img width="1507" height="889" alt="Screenshot 2025-08-02 at 10 44 00 pm" src="https://github.com/user-attachments/assets/fb268289-5189-446b-b28a-6c757625f801" />
+<img width="1507" height="889" alt="Screenshot 2025-08-02 at 10 44 22 pm" src="https://github.com/user-attachments/assets/c7d54412-1f9a-4e57-87f5-dee313c69167" />
 
 ## 📦 Installation
 
@@ -123,5 +133,8 @@ When reporting issues, please include:
 
 ## 🙏 Acknowledgments
 
-- Inspired by Apple's Xcode 16 Default Dark theme
-- Built for the Neovim community
+
+Inspired by Xcode 16's Default Dark theme. Created during iOS development coursework when I fell in love with Xcode's clean syntax highlighting.
+
+*for developers who appreciate clean, consistent code highlighting*
+
