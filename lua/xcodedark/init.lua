@@ -9,7 +9,7 @@ function M.load()
 
 	vim.g.colours_name = "xcodedark"
 
-	local colours = require("colors.xcodedark")
+	local colours = require("xcodedark.colors")
 
 	require("xcodedark.groups.editor").setup(colours)
 	require("xcodedark.groups.syntax").setup(colours)

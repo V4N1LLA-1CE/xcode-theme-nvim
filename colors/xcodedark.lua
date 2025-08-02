@@ -1,1 +1,1 @@
-require("colors.xcodedark").load()
+require("xcodedark").load()
