@@ -22,7 +22,11 @@ local colors = {
 	constant = "#4EB0CC", -- Constants - Light blue (not yellow)
 	type = "#6BDFFF", -- Types and classes - Light blue
 	property = "#67B7A4", -- Object properties - Green
-	parameter = "#67B7A4", -- Function parameters - Green
+	parameter = "#B281EB", -- Function parameters - Purple (NEW!)
+
+	-- Additional purple for specific contexts
+	purple = "#B281EB", -- Xcode-style purple for parameters/argument types
+	purple_light = "#D2A8FF", -- Lighter purple variant
 
 	-- Language-specific elements
 	preprocessor = "#FF7AB2", -- Preprocessor directives, imports - Pink like keywords

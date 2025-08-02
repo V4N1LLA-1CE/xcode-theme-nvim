@@ -5,7 +5,7 @@ function M.setup(colors)
 		-- Identifiers (more balanced approach)
 		["@variable"] = { fg = colors.fg }, -- Most variables should be white, not green
 		["@variable.builtin"] = { fg = colors.keyword }, -- Built-ins like 'this', 'self' should be pink
-		["@variable.parameter"] = { fg = colors.constant }, -- Parameters light purple/blue like constants
+		["@variable.parameter"] = { fg = colors.purple }, -- Parameters purple like Xcode
 		["@variable.member"] = { fg = colors.property }, -- Object properties stay green
 
 		-- Constants
@@ -104,7 +104,8 @@ function M.setup(colors)
 		-- Swift specific treesitter groups
 		["@keyword.modifier.swift"] = { fg = colors.keyword },
 		["@attribute.swift"] = { fg = colors.swift_attribute },
-		["@parameter.swift"] = { fg = colors.constant }, -- Parameters light purple/blue
+		["@parameter.swift"] = { fg = colors.purple }, -- Parameters purple
+		["@variable.parameter.swift"] = { fg = colors.purple }, -- Parameters purple
 		["@type.builtin.swift"] = { fg = colors.type },
 		["@function.builtin.swift"] = { fg = colors.function_name },
 		["@function.swift"] = { fg = colors.type }, -- Swift functions bluish
@@ -130,22 +131,26 @@ function M.setup(colors)
 		["@function.javascript"] = { fg = colors.type }, -- JS functions bluish
 		["@function.call.javascript"] = { fg = colors.type }, -- JS function calls bluish
 		["@variable.builtin.javascript"] = { fg = colors.keyword }, -- this, arguments should be pink
-		["@variable.parameter.javascript"] = { fg = colors.constant }, -- JS parameters light purple/blue
+		["@variable.parameter.javascript"] = { fg = colors.purple }, -- JS parameters purple
+		["@parameter.javascript"] = { fg = colors.purple }, -- JS parameters purple
 		["@constructor.typescript"] = { fg = colors.type },
 		["@keyword.function.typescript"] = { fg = colors.keyword },
 		["@function.typescript"] = { fg = colors.type }, -- TS functions bluish
 		["@function.call.typescript"] = { fg = colors.type }, -- TS function calls bluish
 		["@variable.builtin.typescript"] = { fg = colors.keyword },
-		["@variable.parameter.typescript"] = { fg = colors.constant }, -- TS parameters light purple/blue
+		["@variable.parameter.typescript"] = { fg = colors.purple }, -- TS parameters purple
+		["@parameter.typescript"] = { fg = colors.purple }, -- TS parameters purple
 
 		-- Go specific (for your Go code example)
 		["@keyword.function.go"] = { fg = colors.keyword },
-		["@type.builtin.go"] = { fg = colors.type },
+		["@type.builtin.go"] = { fg = colors.purple }, -- Go built-in types purple
+		["@type.go"] = { fg = colors.purple }, -- Go types purple
 		["@function.builtin.go"] = { fg = colors.function_name },
 		["@function.go"] = { fg = colors.type }, -- Go functions should be bluish like types
 		["@function.call.go"] = { fg = colors.type }, -- Go function calls bluish
 		["@function.method.go"] = { fg = colors.type }, -- Go methods bluish
-		["@variable.parameter.go"] = { fg = colors.constant }, -- Go parameters light purple/blue
+		["@variable.parameter.go"] = { fg = colors.purple }, -- Go parameters purple
+		["@parameter.go"] = { fg = colors.purple }, -- Go parameters purple (alternative capture)
 
 		-- C/C++ specific
 		["@type.builtin.c"] = { fg = colors.type },
