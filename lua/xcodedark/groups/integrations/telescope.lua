@@ -75,11 +75,9 @@ function M.setup(colors)
 		-- Additional telescope elements (these are already defined above, removing duplicates)
 	}
 
-	-- Apply highlights only if telescope is available
-	if pcall(require, "telescope") then
-		for group, opts in pairs(highlights) do
-			vim.api.nvim_set_hl(0, group, opts)
-		end
+	-- Apply highlights - telescope highlights work even if telescope isn't loaded yet
+	for group, opts in pairs(highlights) do
+		vim.api.nvim_set_hl(0, group, opts)
 	end
 end
 

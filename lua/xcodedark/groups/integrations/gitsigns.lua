@@ -60,11 +60,9 @@ function M.setup(colors)
 		GitSignsStagedTopdeleteLn = { bg = colors.diff_delete },
 	}
 
-	-- Apply highlights only if gitsigns is available
-	if pcall(require, "gitsigns") then
-		for group, opts in pairs(highlights) do
-			vim.api.nvim_set_hl(0, group, opts)
-		end
+	-- Apply highlights - gitsigns highlights work even if gitsigns isn't loaded yet
+	for group, opts in pairs(highlights) do
+		vim.api.nvim_set_hl(0, group, opts)
 	end
 end
 

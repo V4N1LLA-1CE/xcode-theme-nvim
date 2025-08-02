@@ -48,17 +48,26 @@ function M.load(opts)
 	require("xcodedark.groups.integrations.treesitter").setup(colors)
 	require("xcodedark.groups.integrations.lsp").setup(colors)
 
-	-- Load optional integrations
+	-- Load optional integrations with error handling
 	if opts.integrations.telescope then
-		require("xcodedark.groups.integrations.telescope").setup(colors)
+		local ok, _ = pcall(require, "xcodedark.groups.integrations.telescope")
+		if ok then
+			require("xcodedark.groups.integrations.telescope").setup(colors)
+		end
 	end
 
 	if opts.integrations.nvim_tree then
-		require("xcodedark.groups.integrations.nvim-tree").setup(colors)
+		local ok, _ = pcall(require, "xcodedark.groups.integrations.nvim-tree")
+		if ok then
+			require("xcodedark.groups.integrations.nvim-tree").setup(colors)
+		end
 	end
 
 	if opts.integrations.gitsigns then
-		require("xcodedark.groups.integrations.gitsigns").setup(colors)
+		local ok, _ = pcall(require, "xcodedark.groups.integrations.gitsigns")
+		if ok then
+			require("xcodedark.groups.integrations.gitsigns").setup(colors)
+		end
 	end
 
 	-- Set terminal colors if enabled

@@ -88,11 +88,9 @@ function M.setup(colors)
 		NvimTreeFileIconDefault = { fg = colors.fg },
 	}
 
-	-- Apply highlights only if nvim-tree is available
-	if pcall(require, "nvim-tree") then
-		for group, opts in pairs(highlights) do
-			vim.api.nvim_set_hl(0, group, opts)
-		end
+	-- Apply highlights - nvim-tree highlights work even if nvim-tree isn't loaded yet
+	for group, opts in pairs(highlights) do
+		vim.api.nvim_set_hl(0, group, opts)
 	end
 end
 
