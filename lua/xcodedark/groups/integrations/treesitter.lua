@@ -2,11 +2,11 @@ local M = {}
 
 function M.setup(colors)
 	local highlights = {
-		-- Identifiers
-		["@variable"] = { fg = colors.variable }, -- Green like Xcode
-		["@variable.builtin"] = { fg = colors.keyword }, -- Pink for built-ins
-		["@variable.parameter"] = { fg = colors.parameter }, -- Green
-		["@variable.member"] = { fg = colors.property }, -- Green
+		-- Identifiers (more balanced approach)
+		["@variable"] = { fg = colors.fg }, -- Most variables should be white, not green
+		["@variable.builtin"] = { fg = colors.keyword }, -- Built-ins like 'this', 'self' should be pink
+		["@variable.parameter"] = { fg = colors.fg }, -- Parameters white by default
+		["@variable.member"] = { fg = colors.property }, -- Object properties stay green
 
 		-- Constants
 		["@constant"] = { fg = colors.constant }, -- Light blue
@@ -43,23 +43,23 @@ function M.setup(colors)
 		-- Attributes and properties
 		["@attribute"] = { fg = colors.attribute },
 		["@attribute.builtin"] = { fg = colors.attribute },
-		["@property"] = { fg = colors.property }, -- Green
+		["@property"] = { fg = colors.property }, -- Keep green for actual properties
 
-		-- Functions
-		["@function"] = { fg = colors.function_name }, -- Green
-		["@function.builtin"] = { fg = colors.function_name }, -- Green
-		["@function.call"] = { fg = colors.function_name }, -- Green
-		["@function.macro"] = { fg = colors.function_name }, -- Green
-		["@function.method"] = { fg = colors.function_name }, -- Green
-		["@function.method.call"] = { fg = colors.function_name }, -- Green
-		["@constructor"] = { fg = colors.function_name }, -- Green
+		-- Functions (reduce green usage)
+		["@function"] = { fg = colors.fg }, -- Function names should be white in many contexts
+		["@function.builtin"] = { fg = colors.function_name }, -- Built-in functions can be green
+		["@function.call"] = { fg = colors.fg }, -- Function calls white
+		["@function.macro"] = { fg = colors.function_name }, -- Macros green
+		["@function.method"] = { fg = colors.fg }, -- Method calls white
+		["@function.method.call"] = { fg = colors.fg }, -- Method calls white
+		["@constructor"] = { fg = colors.type }, -- Constructors should be type color
 
 		-- Keywords and operators
 		["@keyword"] = { fg = colors.keyword }, -- Pink
 		["@keyword.coroutine"] = { fg = colors.keyword },
 		["@keyword.function"] = { fg = colors.keyword },
 		["@keyword.operator"] = { fg = colors.keyword },
-		["@keyword.import"] = { fg = colors.preprocessor }, -- Pink (import should be pink)
+		["@keyword.import"] = { fg = colors.preprocessor }, -- Pink for imports
 		["@keyword.storage"] = { fg = colors.keyword },
 		["@keyword.repeat"] = { fg = colors.keyword },
 		["@keyword.return"] = { fg = colors.keyword },
@@ -94,17 +94,17 @@ function M.setup(colors)
 		["@none"] = {},
 		["@preproc"] = { fg = colors.preprocessor }, -- Pink
 
-		-- Tags (HTML/XML/JSX)
-		["@tag"] = { fg = colors.keyword },
-		["@tag.attribute"] = { fg = colors.property },
+		-- Tags (HTML/XML/JSX) - Make div/tags same as keywords (pink)
+		["@tag"] = { fg = colors.keyword }, -- Pink like keywords
+		["@tag.attribute"] = { fg = colors.property }, -- Attributes stay green
 		["@tag.delimiter"] = { fg = colors.punctuation },
 
-		-- Language specific
+		-- Language specific adjustments
 
 		-- Swift specific treesitter groups
 		["@keyword.modifier.swift"] = { fg = colors.keyword },
 		["@attribute.swift"] = { fg = colors.swift_attribute },
-		["@parameter.swift"] = { fg = colors.parameter },
+		["@parameter.swift"] = { fg = colors.fg }, -- Parameters white
 		["@type.builtin.swift"] = { fg = colors.type },
 		["@function.builtin.swift"] = { fg = colors.function_name },
 		["@variable.builtin.swift"] = { fg = colors.keyword },
@@ -113,23 +113,35 @@ function M.setup(colors)
 		["@keyword.directive.objc"] = { fg = colors.objc_directive }, -- Pink
 		["@type.builtin.objc"] = { fg = colors.type },
 		["@property.objc"] = { fg = colors.property },
-		["@parameter.objc"] = { fg = colors.parameter },
+		["@parameter.objc"] = { fg = colors.fg }, -- Parameters white
 
 		-- Python specific
 		["@keyword.function.python"] = { fg = colors.keyword },
 		["@constructor.python"] = { fg = colors.type },
 		["@function.builtin.python"] = { fg = colors.function_name },
 		["@type.builtin.python"] = { fg = colors.type },
+		["@variable.builtin.python"] = { fg = colors.keyword }, -- self, cls should be pink
 
 		-- JavaScript/TypeScript specific
 		["@constructor.javascript"] = { fg = colors.type },
 		["@keyword.function.javascript"] = { fg = colors.keyword },
-		["@variable.builtin.javascript"] = { fg = colors.keyword },
+		["@variable.builtin.javascript"] = { fg = colors.keyword }, -- this, arguments should be pink
+		["@constructor.typescript"] = { fg = colors.type },
+		["@keyword.function.typescript"] = { fg = colors.keyword },
+		["@variable.builtin.typescript"] = { fg = colors.keyword },
+
+		-- Go specific (for your Go code example)
+		["@keyword.function.go"] = { fg = colors.keyword },
+		["@type.builtin.go"] = { fg = colors.type },
+		["@function.builtin.go"] = { fg = colors.function_name },
+		["@variable.parameter.go"] = { fg = colors.fg }, -- Go parameters white
 
 		-- C/C++ specific
 		["@type.builtin.c"] = { fg = colors.type },
 		["@keyword.storage.c"] = { fg = colors.keyword },
 		["@preproc.c"] = { fg = colors.preprocessor }, -- Pink
+		["@variable.parameter.c"] = { fg = colors.fg },
+		["@variable.parameter.cpp"] = { fg = colors.fg },
 
 		-- Lua specific
 		["@constructor.lua"] = { fg = colors.fg },
@@ -140,11 +152,7 @@ function M.setup(colors)
 		["@attribute.rust"] = { fg = colors.attribute },
 		["@keyword.storage.rust"] = { fg = colors.keyword },
 		["@type.builtin.rust"] = { fg = colors.type },
-
-		-- Go specific
-		["@keyword.function.go"] = { fg = colors.keyword },
-		["@type.builtin.go"] = { fg = colors.type },
-		["@function.builtin.go"] = { fg = colors.function_name },
+		["@variable.parameter.rust"] = { fg = colors.fg },
 
 		-- JSON specific
 		["@label.json"] = { fg = colors.property },
@@ -158,10 +166,16 @@ function M.setup(colors)
 		["@string.css"] = { fg = colors.string },
 		["@number.css"] = { fg = colors.number },
 
-		-- HTML specific
-		["@tag.html"] = { fg = colors.keyword },
-		["@tag.attribute.html"] = { fg = colors.property },
+		-- HTML specific - divs and tags should be pink like keywords
+		["@tag.html"] = { fg = colors.keyword }, -- Pink like keywords
+		["@tag.attribute.html"] = { fg = colors.property }, -- Attributes green
 		["@string.html"] = { fg = colors.string },
+
+		-- JSX/TSX specific - React components and HTML tags
+		["@tag.jsx"] = { fg = colors.keyword }, -- Pink like keywords
+		["@tag.tsx"] = { fg = colors.keyword }, -- Pink like keywords
+		["@tag.attribute.jsx"] = { fg = colors.property },
+		["@tag.attribute.tsx"] = { fg = colors.property },
 
 		-- Markdown specific
 		["@markup.heading"] = { fg = colors.function_name, bold = true },

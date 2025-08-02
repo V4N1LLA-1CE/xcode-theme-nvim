@@ -13,9 +13,9 @@ function M.setup(colors)
 		Boolean = { fg = colors.boolean },
 		Float = { fg = colors.number },
 
-		-- Identifiers
-		Identifier = { fg = colors.variable }, -- Green like Xcode
-		Function = { fg = colors.function_name }, -- Green
+		-- Identifiers (reduce green usage)
+		Identifier = { fg = colors.fg }, -- Most identifiers should be white
+		Function = { fg = colors.fg }, -- Function names white by default
 
 		-- Statements
 		Statement = { fg = colors.keyword },
@@ -42,7 +42,7 @@ function M.setup(colors)
 		-- Special
 		Special = { fg = colors.attribute },
 		SpecialChar = { fg = colors.string },
-		Tag = { fg = colors.attribute },
+		Tag = { fg = colors.keyword }, -- Tags should be pink like keywords
 		Delimiter = { fg = colors.punctuation },
 		SpecialComment = { fg = colors.comment, bold = true },
 		Debug = { fg = colors.error },
@@ -61,27 +61,27 @@ function M.setup(colors)
 
 		-- Additional syntax groups for better coverage
 
-		-- HTML/XML
-		htmlTag = { fg = colors.keyword },
-		htmlEndTag = { fg = colors.keyword },
-		htmlTagName = { fg = colors.type },
-		htmlArg = { fg = colors.property },
+		-- HTML/XML (tags should be pink like keywords)
+		htmlTag = { fg = colors.keyword }, -- Pink like keywords
+		htmlEndTag = { fg = colors.keyword }, -- Pink like keywords
+		htmlTagName = { fg = colors.keyword }, -- Pink like keywords
+		htmlArg = { fg = colors.property }, -- Attributes stay green
 		htmlString = { fg = colors.string },
 
 		-- CSS
-		cssTagName = { fg = colors.type },
-		cssClassName = { fg = colors.function_name },
-		cssIdentifier = { fg = colors.function_name },
-		cssProp = { fg = colors.property },
+		cssTagName = { fg = colors.keyword }, -- CSS selectors pink
+		cssClassName = { fg = colors.function_name }, -- Class names green
+		cssIdentifier = { fg = colors.function_name }, -- IDs green
+		cssProp = { fg = colors.property }, -- Properties green
 		cssValueLength = { fg = colors.number },
 		cssValueNumber = { fg = colors.number },
 		cssColor = { fg = colors.number },
-		cssFunction = { fg = colors.function_name },
+		cssFunction = { fg = colors.fg }, -- CSS functions white
 
-		-- JavaScript/TypeScript
+		-- JavaScript/TypeScript (more balanced)
 		javaScriptFunction = { fg = colors.keyword },
-		javaScriptIdentifier = { fg = colors.variable }, -- Green
-		javaScriptMember = { fg = colors.property }, -- Green
+		javaScriptIdentifier = { fg = colors.fg }, -- Most identifiers white
+		javaScriptMember = { fg = colors.property }, -- Object members green
 		javaScriptNumber = { fg = colors.number },
 		javaScriptNull = { fg = colors.boolean },
 		javaScriptUndefined = { fg = colors.boolean },
@@ -123,11 +123,20 @@ function M.setup(colors)
 		objcSuperclass = { fg = colors.type },
 		objcProtocol = { fg = colors.type },
 		objcProperty = { fg = colors.property }, -- Green
-		objcIvar = { fg = colors.variable }, -- Green
-		objcMethod = { fg = colors.function_name }, -- Green
-		objcMethodArg = { fg = colors.parameter }, -- Green
-		objcMethodName = { fg = colors.function_name }, -- Green
+		objcIvar = { fg = colors.fg }, -- Instance variables white
+		objcMethod = { fg = colors.fg }, -- Method names white
+		objcMethodArg = { fg = colors.fg }, -- Method arguments white
+		objcMethodName = { fg = colors.fg }, -- Method names white
 		objcString = { fg = colors.string },
+
+		-- Go specific
+		goPackage = { fg = colors.keyword },
+		goImport = { fg = colors.preprocessor }, -- Pink for imports
+		goType = { fg = colors.type },
+		goFunction = { fg = colors.fg }, -- Function names white
+		goMethod = { fg = colors.fg }, -- Method names white
+		goBuiltins = { fg = colors.function_name }, -- Built-in functions green
+		goConstants = { fg = colors.constant },
 
 		-- JSON
 		jsonKeyword = { fg = colors.property }, -- Green
@@ -187,9 +196,9 @@ function M.setup(colors)
 
 		-- Vim script
 		vimCommand = { fg = colors.keyword },
-		vimFunction = { fg = colors.function_name },
-		vimUserFunc = { fg = colors.function_name },
-		vimVariable = { fg = colors.variable },
+		vimFunction = { fg = colors.fg }, -- Function names white
+		vimUserFunc = { fg = colors.fg }, -- User functions white
+		vimVariable = { fg = colors.fg }, -- Variables white
 		vimOption = { fg = colors.property },
 		vimHiGroup = { fg = colors.type },
 		vimGroup = { fg = colors.type },
