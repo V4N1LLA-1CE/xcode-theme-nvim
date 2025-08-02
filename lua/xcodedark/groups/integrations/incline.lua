@@ -1,132 +1,138 @@
 local M = {}
 
 function M.setup(colors)
+	-- Check if we're in transparent mode
+	local bg = colors.bg_light
+	if colors.bg == "NONE" then
+		bg = "NONE"
+	end
+
 	local highlights = {
 		-- Incline normal window
 		InclineNormal = {
 			fg = colors.fg_alt,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineNormalNC = {
 			fg = colors.fg_dark,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- For the active/focused window indicator
 		InclineActive = {
 			fg = colors.function_name,
-			bg = colors.bg_light,
+			bg = bg,
 			bold = true,
 		},
 
 		-- For inactive windows
 		InclineInactive = {
 			fg = colors.fg_dark,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- File modification indicator
 		InclineModified = {
 			fg = colors.git_change,
-			bg = colors.bg_light,
+			bg = bg,
 			bold = true,
 		},
 
 		-- Readonly file indicator
 		InclineReadonly = {
 			fg = colors.error,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- File type/icon
 		InclineFileIcon = {
 			fg = colors.function_name,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- Diagnostic indicators
 		InclineError = {
 			fg = colors.error,
-			bg = colors.bg_light,
+			bg = bg,
 			bold = true,
 		},
 		InclineWarning = {
 			fg = colors.warning,
-			bg = colors.bg_light,
+			bg = bg,
 			bold = true,
 		},
 		InclineInfo = {
 			fg = colors.info,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineHint = {
 			fg = colors.hint,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- Git branch/status
 		InclineGit = {
 			fg = colors.git_add,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineGitBranch = {
 			fg = colors.function_name,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineGitAdded = {
 			fg = colors.git_add,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineGitChanged = {
 			fg = colors.git_change,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineGitRemoved = {
 			fg = colors.git_delete,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- LSP status
 		InclineLsp = {
 			fg = colors.function_name,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineLspError = {
 			fg = colors.error,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineLspWarning = {
 			fg = colors.warning,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineLspInfo = {
 			fg = colors.info,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclineLspHint = {
 			fg = colors.hint,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- Separator elements
 		InclineSeparator = {
 			fg = colors.fg_darker,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- Special states
 		InclineTerminal = {
 			fg = colors.terminal_green,
-			bg = colors.bg_light,
+			bg = bg,
 			bold = true,
 		},
 		InclineHelp = {
 			fg = colors.info,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		InclinePreview = {
 			fg = colors.function_name,
-			bg = colors.bg_light,
+			bg = bg,
 			italic = true,
 		},
 	}

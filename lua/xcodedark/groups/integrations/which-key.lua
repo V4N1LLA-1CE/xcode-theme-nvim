@@ -1,94 +1,100 @@
 local M = {}
 
 function M.setup(colors)
+	-- Check if we're in transparent mode
+	local bg = colors.bg_light
+	if colors.bg == "NONE" then
+		bg = "NONE"
+	end
+
 	local highlights = {
 		-- Which-key popup window
 		WhichKey = {
 			fg = colors.function_name,
-			bg = colors.bg_light,
+			bg = bg,
 			bold = true,
 		},
 		WhichKeyGroup = {
 			fg = colors.keyword,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyDesc = {
 			fg = colors.fg,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeySeperator = {
 			fg = colors.comment,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeySeparator = {
 			fg = colors.comment,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyFloat = {
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyBorder = {
 			fg = colors.border,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- Different key types
 		WhichKeyValue = {
 			fg = colors.string,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- Icons and symbols
 		WhichKeyIcon = {
 			fg = colors.function_name,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyIconAzure = {
 			fg = colors.info,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyIconBlue = {
 			fg = colors.function_name,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyIconCyan = {
 			fg = colors.terminal_cyan,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyIconGreen = {
 			fg = colors.git_add,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyIconGrey = {
 			fg = colors.fg_dark,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyIconOrange = {
 			fg = colors.preprocessor,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyIconPurple = {
 			fg = colors.keyword,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyIconRed = {
 			fg = colors.error,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 		WhichKeyIconYellow = {
 			fg = colors.warning,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 
 		-- Title and normal elements
 		WhichKeyTitle = {
 			fg = colors.function_name,
-			bg = colors.bg_light,
+			bg = bg,
 			bold = true,
 		},
 		WhichKeyNormal = {
 			fg = colors.fg,
-			bg = colors.bg_light,
+			bg = bg,
 		},
 	}
 

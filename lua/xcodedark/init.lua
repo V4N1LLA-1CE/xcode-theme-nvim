@@ -50,6 +50,9 @@ function M.load(opts)
 		colors.tab_active_bg = "NONE"
 		colors.tab_inactive_bg = "NONE"
 		colors.pmenu_bg = "NONE"
+		colors.fold_bg = "NONE"
+		-- Also make incline and which-key transparent
+		colors.bg_highlight = "NONE"
 	end
 
 	-- Load core highlight groups
@@ -133,6 +136,41 @@ function M.load(opts)
 		vim.g.terminal_color_13 = colors.terminal_bright_magenta
 		vim.g.terminal_color_14 = colors.terminal_bright_cyan
 		vim.g.terminal_color_15 = colors.terminal_bright_white
+	end
+
+	-- Apply additional transparency fixes for specific elements
+	if opts.transparent then
+		-- Force transparency for problematic highlights
+		vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "NormalFloat", { fg = colors.fg, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.border, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "FoldColumn", { fg = colors.line_number, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "LineNr", { fg = colors.line_number, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.line_number_current, bg = "NONE" })
+
+		-- Fix incline transparency
+		vim.api.nvim_set_hl(0, "InclineNormal", { fg = colors.fg_alt, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "InclineNormalNC", { fg = colors.fg_dark, bg = "NONE" })
+
+		-- Fix which-key transparency
+		vim.api.nvim_set_hl(0, "WhichKeyFloat", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "WhichKey", { fg = colors.function_name, bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "WhichKeyGroup", { fg = colors.keyword, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "WhichKeyDesc", { fg = colors.fg, bg = "NONE" })
+
+		-- Fix bufferline transparency
+		vim.api.nvim_set_hl(0, "BufferLineBackground", { fg = colors.tab_inactive_fg, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "BufferLineFill", { bg = "NONE" })
+		vim.api.nvim_set_hl(0, "BufferLineBufferSelected", { fg = colors.tab_active_fg, bg = "NONE", bold = true })
+		vim.api.nvim_set_hl(0, "BufferLineBufferVisible", { fg = colors.tab_inactive_fg, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "BufferLineBuffer", { fg = colors.fg_dark, bg = "NONE" })
+
+		-- Fix lazygit transparency
+		vim.api.nvim_set_hl(0, "LazyGitFloat", { fg = colors.fg, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.border, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TerminalNormal", { fg = colors.fg, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "TerminalNormalFloat", { fg = colors.fg, bg = "NONE" })
 	end
 end
 

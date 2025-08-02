@@ -1,65 +1,76 @@
 local M = {}
 
 function M.setup(colors)
+	-- Check if we're in transparent mode
+	local bg = colors.bg
+	local bg_light = colors.bg_light
+	local pmenu_bg = colors.pmenu_bg
+
+	if colors.bg == "NONE" then
+		bg = "NONE"
+		bg_light = "NONE"
+		pmenu_bg = "NONE"
+	end
+
 	local highlights = {
 		-- LazyGit floating window background
 		LazyGitFloat = {
 			fg = colors.fg,
-			bg = colors.bg,
+			bg = bg,
 		},
 		LazyGitBorder = {
 			fg = colors.border,
-			bg = colors.bg,
+			bg = bg,
 		},
 
 		-- Terminal window for lazygit
 		LazyGitNormal = {
 			fg = colors.fg,
-			bg = colors.bg,
+			bg = bg,
 		},
 
 		-- Tooltips and popups in lazygit
 		LazyGitTooltip = {
 			fg = colors.fg,
-			bg = colors.bg_light,
+			bg = bg_light,
 		},
 		LazyGitTooltipBorder = {
 			fg = colors.border,
-			bg = colors.bg_light,
+			bg = bg_light,
 		},
 
 		-- Override terminal colors for lazygit to ensure transparency
 		-- These are applied when lazygit terminal is open
 		TerminalNormal = {
 			fg = colors.fg,
-			bg = colors.bg,
+			bg = bg,
 		},
 		TerminalNormalFloat = {
 			fg = colors.fg,
-			bg = colors.bg,
+			bg = bg,
 		},
 
 		-- Float title
 		FloatTitle = {
 			fg = colors.function_name,
-			bg = colors.bg,
+			bg = bg,
 			bold = true,
 		},
 
 		-- General floating window improvements
 		NormalFloat = {
 			fg = colors.fg,
-			bg = colors.bg_light,
+			bg = bg_light,
 		},
 		FloatBorder = {
 			fg = colors.border,
-			bg = colors.bg_light,
+			bg = bg_light,
 		},
 
 		-- Popup menu (for any lazygit menus)
 		Pmenu = {
 			fg = colors.pmenu_fg,
-			bg = colors.pmenu_bg,
+			bg = pmenu_bg,
 		},
 		PmenuSel = {
 			fg = colors.pmenu_sel_fg,
@@ -67,7 +78,7 @@ function M.setup(colors)
 		},
 		PmenuBorder = {
 			fg = colors.border,
-			bg = colors.pmenu_bg,
+			bg = pmenu_bg,
 		},
 
 		-- Terminal cursor in lazygit
@@ -93,29 +104,29 @@ function M.setup(colors)
 		-- For toggleterm integration (if using toggleterm for lazygit)
 		ToggleTermNormal = {
 			fg = colors.fg,
-			bg = colors.bg,
+			bg = bg,
 		},
 		ToggleTermNormalFloat = {
 			fg = colors.fg,
-			bg = colors.bg,
+			bg = bg,
 		},
 		ToggleTermBorder = {
 			fg = colors.border,
-			bg = colors.bg,
+			bg = bg,
 		},
 
 		-- For any git-related highlights that might show in terminal
 		GitSignsAdd = {
 			fg = colors.git_add,
-			bg = colors.bg,
+			bg = bg,
 		},
 		GitSignsChange = {
 			fg = colors.git_change,
-			bg = colors.bg,
+			bg = bg,
 		},
 		GitSignsDelete = {
 			fg = colors.git_delete,
-			bg = colors.bg,
+			bg = bg,
 		},
 	}
 

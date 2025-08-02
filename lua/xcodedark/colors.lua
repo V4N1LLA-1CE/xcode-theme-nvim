@@ -11,28 +11,28 @@ local colors = {
 	fg_dark = "#9D9D9D", -- Tertiary text
 	fg_darker = "#6C7986", -- Comments and dimmed text
 
-	-- Xcode 16 Syntax Colors (Default Dark Theme)
+	-- Xcode 16 Syntax Colors (Default Dark Theme) - More accurate
 	keyword = "#FF7AB2", -- Keywords (var, let, if, class, func) - Pink
 	string = "#FF8170", -- String literals - Coral red
 	comment = "#6C7986", -- Comments - Muted gray
 	number = "#D9C97C", -- Numbers and numeric literals - Warm yellow
 	boolean = "#FF7AB2", -- Booleans (true, false) - Same as keywords
-	function_name = "#4EB0CC", -- Function names and calls - Cyan blue
-	variable = "#FFFFFF", -- Variables and identifiers - White
-	constant = "#D9C97C", -- Constants - Same as numbers
+	function_name = "#67B7A4", -- Function names and calls - Green (more accurate)
+	variable = "#67B7A4", -- Variables and identifiers - Green (not white)
+	constant = "#4EB0CC", -- Constants - Light blue (not yellow)
 	type = "#6BDFFF", -- Types and classes - Light blue
-	property = "#FFFFFF", -- Object properties - White
-	parameter = "#FFFFFF", -- Function parameters - White
+	property = "#67B7A4", -- Object properties - Green
+	parameter = "#67B7A4", -- Function parameters - Green
 
 	-- Language-specific elements
-	preprocessor = "#FD8F3F", -- Preprocessor directives (#import, #include) - Orange
+	preprocessor = "#FF7AB2", -- Preprocessor directives, imports - Pink like keywords
 	attribute = "#FD8F3F", -- Attributes and decorators - Orange
 	operator = "#FFFFFF", -- Operators (+, -, =, etc.) - White
 	punctuation = "#FFFFFF", -- Punctuation marks - White
 
 	-- Swift/Objective-C specific
 	swift_attribute = "#FD8F3F", -- @objc, @available, etc.
-	objc_directive = "#FD8F3F", -- #pragma, #import
+	objc_directive = "#FF7AB2", -- #pragma, #import - Pink like keywords
 
 	-- UI Elements
 	cursor = "#FFFFFF", -- Text cursor

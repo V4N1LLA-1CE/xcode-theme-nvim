@@ -6,7 +6,7 @@ function M.setup(colors)
 		Comment = { fg = colors.comment, italic = true },
 
 		-- Constants
-		Constant = { fg = colors.constant },
+		Constant = { fg = colors.constant }, -- Light blue like Xcode
 		String = { fg = colors.string },
 		Character = { fg = colors.string },
 		Number = { fg = colors.number },
@@ -14,8 +14,8 @@ function M.setup(colors)
 		Float = { fg = colors.number },
 
 		-- Identifiers
-		Identifier = { fg = colors.variable },
-		Function = { fg = colors.function_name },
+		Identifier = { fg = colors.variable }, -- Green like Xcode
+		Function = { fg = colors.function_name }, -- Green
 
 		-- Statements
 		Statement = { fg = colors.keyword },
@@ -27,11 +27,11 @@ function M.setup(colors)
 		Exception = { fg = colors.keyword },
 
 		-- PreProcessor
-		PreProc = { fg = colors.preprocessor },
-		Include = { fg = colors.preprocessor },
-		Define = { fg = colors.preprocessor },
-		Macro = { fg = colors.preprocessor },
-		PreCondit = { fg = colors.preprocessor },
+		PreProc = { fg = colors.preprocessor }, -- Pink like keywords/imports
+		Include = { fg = colors.preprocessor }, -- Pink for imports
+		Define = { fg = colors.preprocessor }, -- Pink
+		Macro = { fg = colors.preprocessor }, -- Pink
+		PreCondit = { fg = colors.preprocessor }, -- Pink
 
 		-- Types
 		Type = { fg = colors.type },
@@ -80,8 +80,8 @@ function M.setup(colors)
 
 		-- JavaScript/TypeScript
 		javaScriptFunction = { fg = colors.keyword },
-		javaScriptIdentifier = { fg = colors.keyword },
-		javaScriptMember = { fg = colors.property },
+		javaScriptIdentifier = { fg = colors.variable }, -- Green
+		javaScriptMember = { fg = colors.property }, -- Green
 		javaScriptNumber = { fg = colors.number },
 		javaScriptNull = { fg = colors.boolean },
 		javaScriptUndefined = { fg = colors.boolean },
@@ -99,15 +99,15 @@ function M.setup(colors)
 
 		-- C/C++
 		cIncluded = { fg = colors.string },
-		cDefine = { fg = colors.preprocessor },
-		cPreCondit = { fg = colors.preprocessor },
+		cDefine = { fg = colors.preprocessor }, -- Pink
+		cPreCondit = { fg = colors.preprocessor }, -- Pink
 		cType = { fg = colors.type },
 		cStorageClass = { fg = colors.keyword },
 		cppStructure = { fg = colors.keyword },
 		cppAccess = { fg = colors.keyword },
 
 		-- Swift specific
-		swiftImports = { fg = colors.preprocessor },
+		swiftImports = { fg = colors.preprocessor }, -- Pink for imports
 		swiftAttribute = { fg = colors.swift_attribute },
 		swiftType = { fg = colors.type },
 		swiftTypeDeclaration = { fg = colors.keyword },
@@ -116,28 +116,28 @@ function M.setup(colors)
 		swiftInterpolatedWrapper = { fg = colors.operator },
 
 		-- Objective-C specific
-		objcDirective = { fg = colors.objc_directive },
+		objcDirective = { fg = colors.objc_directive }, -- Pink
 		objcStatement = { fg = colors.keyword },
 		objcType = { fg = colors.type },
 		objcClass = { fg = colors.type },
 		objcSuperclass = { fg = colors.type },
 		objcProtocol = { fg = colors.type },
-		objcProperty = { fg = colors.property },
-		objcIvar = { fg = colors.variable },
-		objcMethod = { fg = colors.function_name },
-		objcMethodArg = { fg = colors.parameter },
-		objcMethodName = { fg = colors.function_name },
+		objcProperty = { fg = colors.property }, -- Green
+		objcIvar = { fg = colors.variable }, -- Green
+		objcMethod = { fg = colors.function_name }, -- Green
+		objcMethodArg = { fg = colors.parameter }, -- Green
+		objcMethodName = { fg = colors.function_name }, -- Green
 		objcString = { fg = colors.string },
 
 		-- JSON
-		jsonKeyword = { fg = colors.property },
+		jsonKeyword = { fg = colors.property }, -- Green
 		jsonString = { fg = colors.string },
 		jsonNumber = { fg = colors.number },
 		jsonBoolean = { fg = colors.boolean },
 		jsonNull = { fg = colors.boolean },
 
 		-- YAML
-		yamlKey = { fg = colors.property },
+		yamlKey = { fg = colors.property }, -- Green
 		yamlString = { fg = colors.string },
 		yamlNumber = { fg = colors.number },
 		yamlBoolean = { fg = colors.boolean },

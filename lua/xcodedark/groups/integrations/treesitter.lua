@@ -3,15 +3,15 @@ local M = {}
 function M.setup(colors)
 	local highlights = {
 		-- Identifiers
-		["@variable"] = { fg = colors.variable },
-		["@variable.builtin"] = { fg = colors.keyword },
-		["@variable.parameter"] = { fg = colors.parameter },
-		["@variable.member"] = { fg = colors.property },
+		["@variable"] = { fg = colors.variable }, -- Green like Xcode
+		["@variable.builtin"] = { fg = colors.keyword }, -- Pink for built-ins
+		["@variable.parameter"] = { fg = colors.parameter }, -- Green
+		["@variable.member"] = { fg = colors.property }, -- Green
 
 		-- Constants
-		["@constant"] = { fg = colors.constant },
-		["@constant.builtin"] = { fg = colors.boolean },
-		["@constant.macro"] = { fg = colors.constant },
+		["@constant"] = { fg = colors.constant }, -- Light blue
+		["@constant.builtin"] = { fg = colors.constant }, -- Light blue
+		["@constant.macro"] = { fg = colors.constant }, -- Light blue
 
 		-- Modules and namespaces
 		["@module"] = { fg = colors.type },
@@ -43,23 +43,23 @@ function M.setup(colors)
 		-- Attributes and properties
 		["@attribute"] = { fg = colors.attribute },
 		["@attribute.builtin"] = { fg = colors.attribute },
-		["@property"] = { fg = colors.property },
+		["@property"] = { fg = colors.property }, -- Green
 
 		-- Functions
-		["@function"] = { fg = colors.function_name },
-		["@function.builtin"] = { fg = colors.function_name },
-		["@function.call"] = { fg = colors.function_name },
-		["@function.macro"] = { fg = colors.function_name },
-		["@function.method"] = { fg = colors.function_name },
-		["@function.method.call"] = { fg = colors.function_name },
-		["@constructor"] = { fg = colors.function_name },
+		["@function"] = { fg = colors.function_name }, -- Green
+		["@function.builtin"] = { fg = colors.function_name }, -- Green
+		["@function.call"] = { fg = colors.function_name }, -- Green
+		["@function.macro"] = { fg = colors.function_name }, -- Green
+		["@function.method"] = { fg = colors.function_name }, -- Green
+		["@function.method.call"] = { fg = colors.function_name }, -- Green
+		["@constructor"] = { fg = colors.function_name }, -- Green
 
 		-- Keywords and operators
-		["@keyword"] = { fg = colors.keyword },
+		["@keyword"] = { fg = colors.keyword }, -- Pink
 		["@keyword.coroutine"] = { fg = colors.keyword },
 		["@keyword.function"] = { fg = colors.keyword },
 		["@keyword.operator"] = { fg = colors.keyword },
-		["@keyword.import"] = { fg = colors.preprocessor },
+		["@keyword.import"] = { fg = colors.preprocessor }, -- Pink (import should be pink)
 		["@keyword.storage"] = { fg = colors.keyword },
 		["@keyword.repeat"] = { fg = colors.keyword },
 		["@keyword.return"] = { fg = colors.keyword },
@@ -67,8 +67,8 @@ function M.setup(colors)
 		["@keyword.exception"] = { fg = colors.keyword },
 		["@keyword.conditional"] = { fg = colors.keyword },
 		["@keyword.conditional.ternary"] = { fg = colors.operator },
-		["@keyword.directive"] = { fg = colors.preprocessor },
-		["@keyword.directive.define"] = { fg = colors.preprocessor },
+		["@keyword.directive"] = { fg = colors.preprocessor }, -- Pink
+		["@keyword.directive.define"] = { fg = colors.preprocessor }, -- Pink
 
 		-- Operators
 		["@operator"] = { fg = colors.operator },
@@ -92,7 +92,7 @@ function M.setup(colors)
 		-- Misc
 		["@error"] = { fg = colors.error },
 		["@none"] = {},
-		["@preproc"] = { fg = colors.preprocessor },
+		["@preproc"] = { fg = colors.preprocessor }, -- Pink
 
 		-- Tags (HTML/XML/JSX)
 		["@tag"] = { fg = colors.keyword },
@@ -110,7 +110,7 @@ function M.setup(colors)
 		["@variable.builtin.swift"] = { fg = colors.keyword },
 
 		-- Objective-C specific treesitter groups
-		["@keyword.directive.objc"] = { fg = colors.objc_directive },
+		["@keyword.directive.objc"] = { fg = colors.objc_directive }, -- Pink
 		["@type.builtin.objc"] = { fg = colors.type },
 		["@property.objc"] = { fg = colors.property },
 		["@parameter.objc"] = { fg = colors.parameter },
@@ -129,7 +129,7 @@ function M.setup(colors)
 		-- C/C++ specific
 		["@type.builtin.c"] = { fg = colors.type },
 		["@keyword.storage.c"] = { fg = colors.keyword },
-		["@preproc.c"] = { fg = colors.preprocessor },
+		["@preproc.c"] = { fg = colors.preprocessor }, -- Pink
 
 		-- Lua specific
 		["@constructor.lua"] = { fg = colors.fg },
