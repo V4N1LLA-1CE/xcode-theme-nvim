@@ -15,7 +15,7 @@ function M.setup(colors)
 
 		-- Identifiers (reduce green usage)
 		Identifier = { fg = colors.fg }, -- Most identifiers should be white
-		Function = { fg = colors.fg }, -- Function names white by default
+		Function = { fg = colors.type }, -- Function names bluish like types
 
 		-- Statements
 		Statement = { fg = colors.keyword },
@@ -76,7 +76,7 @@ function M.setup(colors)
 		cssValueLength = { fg = colors.number },
 		cssValueNumber = { fg = colors.number },
 		cssColor = { fg = colors.number },
-		cssFunction = { fg = colors.fg }, -- CSS functions white
+		cssFunction = { fg = colors.type }, -- CSS functions bluish
 
 		-- JavaScript/TypeScript (more balanced)
 		javaScriptFunction = { fg = colors.keyword },
@@ -85,6 +85,13 @@ function M.setup(colors)
 		javaScriptNumber = { fg = colors.number },
 		javaScriptNull = { fg = colors.boolean },
 		javaScriptUndefined = { fg = colors.boolean },
+
+		-- JSX specific syntax highlighting
+		jsxTag = { fg = colors.keyword }, -- JSX tags pink
+		jsxTagName = { fg = colors.keyword }, -- JSX tag names pink
+		jsxAttrib = { fg = colors.property }, -- JSX attributes green
+		jsxString = { fg = colors.string },
+		jsxComponentName = { fg = colors.type }, -- React component names bluish
 
 		-- Python
 		pythonBuiltin = { fg = colors.type },
@@ -133,8 +140,8 @@ function M.setup(colors)
 		goPackage = { fg = colors.keyword },
 		goImport = { fg = colors.preprocessor }, -- Pink for imports
 		goType = { fg = colors.type },
-		goFunction = { fg = colors.fg }, -- Function names white
-		goMethod = { fg = colors.fg }, -- Method names white
+		goFunction = { fg = colors.type }, -- Function names bluish
+		goMethod = { fg = colors.type }, -- Method names bluish
 		goBuiltins = { fg = colors.function_name }, -- Built-in functions green
 		goConstants = { fg = colors.constant },
 

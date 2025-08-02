@@ -5,7 +5,7 @@ function M.setup(colors)
 		-- Identifiers (more balanced approach)
 		["@variable"] = { fg = colors.fg }, -- Most variables should be white, not green
 		["@variable.builtin"] = { fg = colors.keyword }, -- Built-ins like 'this', 'self' should be pink
-		["@variable.parameter"] = { fg = colors.fg }, -- Parameters white by default
+		["@variable.parameter"] = { fg = colors.constant }, -- Parameters light purple/blue like constants
 		["@variable.member"] = { fg = colors.property }, -- Object properties stay green
 
 		-- Constants
@@ -46,12 +46,12 @@ function M.setup(colors)
 		["@property"] = { fg = colors.property }, -- Keep green for actual properties
 
 		-- Functions (reduce green usage)
-		["@function"] = { fg = colors.fg }, -- Function names should be white in many contexts
+		["@function"] = { fg = colors.type }, -- Function names should be bluish in most contexts
 		["@function.builtin"] = { fg = colors.function_name }, -- Built-in functions can be green
-		["@function.call"] = { fg = colors.fg }, -- Function calls white
+		["@function.call"] = { fg = colors.type }, -- Function calls bluish
 		["@function.macro"] = { fg = colors.function_name }, -- Macros green
-		["@function.method"] = { fg = colors.fg }, -- Method calls white
-		["@function.method.call"] = { fg = colors.fg }, -- Method calls white
+		["@function.method"] = { fg = colors.type }, -- Method calls bluish
+		["@function.method.call"] = { fg = colors.type }, -- Method calls bluish
 		["@constructor"] = { fg = colors.type }, -- Constructors should be type color
 
 		-- Keywords and operators
@@ -104,9 +104,11 @@ function M.setup(colors)
 		-- Swift specific treesitter groups
 		["@keyword.modifier.swift"] = { fg = colors.keyword },
 		["@attribute.swift"] = { fg = colors.swift_attribute },
-		["@parameter.swift"] = { fg = colors.fg }, -- Parameters white
+		["@parameter.swift"] = { fg = colors.constant }, -- Parameters light purple/blue
 		["@type.builtin.swift"] = { fg = colors.type },
 		["@function.builtin.swift"] = { fg = colors.function_name },
+		["@function.swift"] = { fg = colors.type }, -- Swift functions bluish
+		["@function.call.swift"] = { fg = colors.type }, -- Swift function calls bluish
 		["@variable.builtin.swift"] = { fg = colors.keyword },
 
 		-- Objective-C specific treesitter groups
@@ -125,16 +127,25 @@ function M.setup(colors)
 		-- JavaScript/TypeScript specific
 		["@constructor.javascript"] = { fg = colors.type },
 		["@keyword.function.javascript"] = { fg = colors.keyword },
+		["@function.javascript"] = { fg = colors.type }, -- JS functions bluish
+		["@function.call.javascript"] = { fg = colors.type }, -- JS function calls bluish
 		["@variable.builtin.javascript"] = { fg = colors.keyword }, -- this, arguments should be pink
+		["@variable.parameter.javascript"] = { fg = colors.constant }, -- JS parameters light purple/blue
 		["@constructor.typescript"] = { fg = colors.type },
 		["@keyword.function.typescript"] = { fg = colors.keyword },
+		["@function.typescript"] = { fg = colors.type }, -- TS functions bluish
+		["@function.call.typescript"] = { fg = colors.type }, -- TS function calls bluish
 		["@variable.builtin.typescript"] = { fg = colors.keyword },
+		["@variable.parameter.typescript"] = { fg = colors.constant }, -- TS parameters light purple/blue
 
 		-- Go specific (for your Go code example)
 		["@keyword.function.go"] = { fg = colors.keyword },
 		["@type.builtin.go"] = { fg = colors.type },
 		["@function.builtin.go"] = { fg = colors.function_name },
-		["@variable.parameter.go"] = { fg = colors.fg }, -- Go parameters white
+		["@function.go"] = { fg = colors.type }, -- Go functions should be bluish like types
+		["@function.call.go"] = { fg = colors.type }, -- Go function calls bluish
+		["@function.method.go"] = { fg = colors.type }, -- Go methods bluish
+		["@variable.parameter.go"] = { fg = colors.constant }, -- Go parameters light purple/blue
 
 		-- C/C++ specific
 		["@type.builtin.c"] = { fg = colors.type },
@@ -174,6 +185,8 @@ function M.setup(colors)
 		-- JSX/TSX specific - React components and HTML tags
 		["@tag.jsx"] = { fg = colors.keyword }, -- Pink like keywords
 		["@tag.tsx"] = { fg = colors.keyword }, -- Pink like keywords
+		["@tag.builtin.jsx"] = { fg = colors.keyword }, -- HTML tags in JSX (div, span, etc.) should be pink
+		["@tag.builtin.tsx"] = { fg = colors.keyword }, -- HTML tags in TSX (div, span, etc.) should be pink
 		["@tag.attribute.jsx"] = { fg = colors.property },
 		["@tag.attribute.tsx"] = { fg = colors.property },
 
