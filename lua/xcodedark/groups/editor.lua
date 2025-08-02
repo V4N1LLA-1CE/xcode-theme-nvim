@@ -1,0 +1,137 @@
+local M = {}
+
+function M.setup(colors)
+	local highlights = {
+		-- Editor UI
+		Normal = { fg = colors.fg, bg = colors.bg },
+		NormalFloat = { fg = colors.fg, bg = colors.bg_light },
+		NormalNC = { fg = colors.fg, bg = colors.bg },
+
+		-- Cursor and lines
+		Cursor = { fg = colors.bg, bg = colors.cursor },
+		CursorLine = { bg = colors.cursor_line },
+		CursorLineNr = { fg = colors.line_number_current, bg = colors.gutter_bg },
+		CursorColumn = { bg = colors.cursor_line },
+
+		-- Line numbers and gutter
+		LineNr = { fg = colors.line_number, bg = colors.gutter_bg },
+		SignColumn = { bg = colors.gutter_bg },
+		FoldColumn = { fg = colors.line_number, bg = colors.gutter_bg },
+
+		-- Visual selections
+		Visual = { bg = colors.visual },
+		VisualNOS = { bg = colors.visual },
+
+		-- Search
+		Search = { fg = colors.search_fg, bg = colors.search },
+		IncSearch = { fg = colors.fg, bg = colors.inc_search },
+		CurSearch = { fg = colors.search_fg, bg = colors.search },
+
+		-- Windows and splits
+		WinSeparator = { fg = colors.separator },
+		VertSplit = { fg = colors.separator },
+
+		-- Status line
+		StatusLine = { fg = colors.status_fg, bg = colors.status_bg },
+		StatusLineNC = { fg = colors.fg_dark, bg = colors.status_bg },
+
+		-- Tabs
+		TabLine = { fg = colors.tab_inactive_fg, bg = colors.tab_inactive_bg },
+		TabLineFill = { bg = colors.tab_inactive_bg },
+		TabLineSel = { fg = colors.tab_active_fg, bg = colors.tab_active_bg },
+
+		-- Popup menus
+		Pmenu = { fg = colors.pmenu_fg, bg = colors.pmenu_bg },
+		PmenuSel = { fg = colors.pmenu_sel_fg, bg = colors.pmenu_sel_bg },
+		PmenuSbar = { bg = colors.pmenu_scrollbar },
+		PmenuThumb = { bg = colors.scrollbar_thumb },
+
+		-- Completion menu kinds
+		CmpItemAbbr = { fg = colors.pmenu_fg },
+		CmpItemAbbrDeprecated = { fg = colors.fg_dark, strikethrough = true },
+		CmpItemAbbrMatch = { fg = colors.function_name, bold = true },
+		CmpItemAbbrMatchFuzzy = { fg = colors.function_name },
+		CmpItemKind = { fg = colors.type },
+		CmpItemMenu = { fg = colors.fg_dark },
+
+		-- Scrollbar
+		ScrollbarHandle = { bg = colors.scrollbar_thumb },
+
+		-- Folding
+		Folded = { fg = colors.fold_fg, bg = colors.fold_bg },
+
+		-- Matching parentheses
+		MatchParen = { fg = colors.match_paren, bold = true },
+
+		-- Messages
+		ErrorMsg = { fg = colors.error },
+		WarningMsg = { fg = colors.warning },
+		ModeMsg = { fg = colors.fg },
+		MoreMsg = { fg = colors.info },
+
+		-- Question prompts
+		Question = { fg = colors.info },
+
+		-- Directory listings
+		Directory = { fg = colors.function_name },
+
+		-- Concealed text
+		Conceal = { fg = colors.fg_dark },
+
+		-- Non-text elements
+		NonText = { fg = colors.fg_darker },
+		EndOfBuffer = { fg = colors.bg },
+
+		-- Special keys
+		SpecialKey = { fg = colors.fg_darker },
+
+		-- Wild menu (command completion)
+		WildMenu = { fg = colors.pmenu_sel_fg, bg = colors.pmenu_sel_bg },
+
+		-- Color column
+		ColorColumn = { bg = colors.bg_highlight },
+
+		-- Spell checking
+		SpellBad = { fg = colors.spell_bad, undercurl = true },
+		SpellCap = { fg = colors.spell_cap, undercurl = true },
+		SpellRare = { fg = colors.spell_rare, undercurl = true },
+		SpellLocal = { fg = colors.spell_local, undercurl = true },
+
+		-- Diagnostics (built-in)
+		DiagnosticError = { fg = colors.error },
+		DiagnosticWarn = { fg = colors.warning },
+		DiagnosticInfo = { fg = colors.info },
+		DiagnosticHint = { fg = colors.hint },
+
+		DiagnosticVirtualTextError = { fg = colors.error },
+		DiagnosticVirtualTextWarn = { fg = colors.warning },
+		DiagnosticVirtualTextInfo = { fg = colors.info },
+		DiagnosticVirtualTextHint = { fg = colors.hint },
+
+		DiagnosticUnderlineError = { undercurl = true, sp = colors.error },
+		DiagnosticUnderlineWarn = { undercurl = true, sp = colors.warning },
+		DiagnosticUnderlineInfo = { undercurl = true, sp = colors.info },
+		DiagnosticUnderlineHint = { undercurl = true, sp = colors.hint },
+
+		-- Floating windows
+		FloatBorder = { fg = colors.border, bg = colors.bg_light },
+		FloatTitle = { fg = colors.fg, bg = colors.bg_light },
+
+		-- QuickFix and Location lists
+		QuickFixLine = { bg = colors.bg_highlight },
+
+		-- Title
+		Title = { fg = colors.function_name, bold = true },
+
+		-- Debug
+		debugPC = { bg = colors.debug_current_line },
+		debugBreakpoint = { fg = colors.debug_breakpoint, bold = true },
+	}
+
+	-- Apply highlights
+	for group, opts in pairs(highlights) do
+		vim.api.nvim_set_hl(0, group, opts)
+	end
+end
+
+return M
