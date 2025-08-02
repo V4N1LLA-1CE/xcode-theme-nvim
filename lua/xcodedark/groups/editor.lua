@@ -35,10 +35,22 @@ function M.setup(colors)
 		StatusLine = { fg = colors.status_fg, bg = colors.status_bg },
 		StatusLineNC = { fg = colors.fg_dark, bg = colors.status_bg },
 
-		-- Tabs
+		-- Tabs (built-in vim tabs)
 		TabLine = { fg = colors.tab_inactive_fg, bg = colors.tab_inactive_bg },
 		TabLineFill = { bg = colors.tab_inactive_bg },
-		TabLineSel = { fg = colors.tab_active_fg, bg = colors.tab_active_bg },
+		TabLineSel = { fg = colors.tab_active_fg, bg = colors.tab_active_bg, bold = true },
+
+		-- Floating windows and borders (important for transparency)
+		FloatBorder = { fg = colors.border, bg = colors.bg_light },
+		FloatTitle = { fg = colors.function_name, bg = colors.bg_light, bold = true },
+		FloatFooter = { fg = colors.fg_dark, bg = colors.bg_light },
+
+		-- Terminal colors (for integrated terminal and lazygit)
+		Terminal = { fg = colors.fg, bg = colors.bg },
+		TerminalNormal = { fg = colors.fg, bg = colors.bg },
+		TerminalNormalFloat = { fg = colors.fg, bg = colors.bg },
+		TermCursor = { fg = colors.bg, bg = colors.cursor },
+		TermCursorNC = { fg = colors.bg, bg = colors.cursor },
 
 		-- Popup menus
 		Pmenu = { fg = colors.pmenu_fg, bg = colors.pmenu_bg },
@@ -97,7 +109,7 @@ function M.setup(colors)
 		SpellRare = { fg = colors.spell_rare, undercurl = true },
 		SpellLocal = { fg = colors.spell_local, undercurl = true },
 
-		-- Diagnostics (built-in)
+		-- Diagnostic colors (built-in)
 		DiagnosticError = { fg = colors.error },
 		DiagnosticWarn = { fg = colors.warning },
 		DiagnosticInfo = { fg = colors.info },
@@ -112,10 +124,6 @@ function M.setup(colors)
 		DiagnosticUnderlineWarn = { undercurl = true, sp = colors.warning },
 		DiagnosticUnderlineInfo = { undercurl = true, sp = colors.info },
 		DiagnosticUnderlineHint = { undercurl = true, sp = colors.hint },
-
-		-- Floating windows
-		FloatBorder = { fg = colors.border, bg = colors.bg_light },
-		FloatTitle = { fg = colors.fg, bg = colors.bg_light },
 
 		-- QuickFix and Location lists
 		QuickFixLine = { bg = colors.bg_highlight },

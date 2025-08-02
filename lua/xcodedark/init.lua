@@ -6,6 +6,11 @@ local default_options = {
 		telescope = true,
 		nvim_tree = true,
 		gitsigns = true,
+		bufferline = true, -- For file tabs
+		incline = true, -- For incline.nvim
+		lazygit = true, -- For lazygit integration
+		which_key = true, -- For which-key popup
+		notify = true, -- For nvim-notify
 	},
 	-- Style options
 	styles = {
@@ -38,8 +43,13 @@ function M.load(opts)
 	if opts.transparent then
 		colors.bg = "NONE"
 		colors.bg_alt = "NONE"
+		colors.bg_dark = "NONE"
+		colors.bg_light = "NONE"
 		colors.gutter_bg = "NONE"
 		colors.status_bg = "NONE"
+		colors.tab_active_bg = "NONE"
+		colors.tab_inactive_bg = "NONE"
+		colors.pmenu_bg = "NONE"
 	end
 
 	-- Load core highlight groups
@@ -67,6 +77,41 @@ function M.load(opts)
 		local ok, _ = pcall(require, "xcodedark.groups.integrations.gitsigns")
 		if ok then
 			require("xcodedark.groups.integrations.gitsigns").setup(colors)
+		end
+	end
+
+	if opts.integrations.bufferline then
+		local ok, _ = pcall(require, "xcodedark.groups.integrations.bufferline")
+		if ok then
+			require("xcodedark.groups.integrations.bufferline").setup(colors)
+		end
+	end
+
+	if opts.integrations.incline then
+		local ok, _ = pcall(require, "xcodedark.groups.integrations.incline")
+		if ok then
+			require("xcodedark.groups.integrations.incline").setup(colors)
+		end
+	end
+
+	if opts.integrations.lazygit then
+		local ok, _ = pcall(require, "xcodedark.groups.integrations.lazygit")
+		if ok then
+			require("xcodedark.groups.integrations.lazygit").setup(colors)
+		end
+	end
+
+	if opts.integrations.which_key then
+		local ok, _ = pcall(require, "xcodedark.groups.integrations.which-key")
+		if ok then
+			require("xcodedark.groups.integrations.which-key").setup(colors)
+		end
+	end
+
+	if opts.integrations.notify then
+		local ok, _ = pcall(require, "xcodedark.groups.integrations.notify")
+		if ok then
+			require("xcodedark.groups.integrations.notify").setup(colors)
 		end
 	end
 

@@ -12,7 +12,7 @@ function M.setup(colors)
 		TelescopePromptBorder = { fg = colors.border, bg = colors.bg_dark },
 		TelescopePromptTitle = { fg = colors.function_name, bg = colors.bg_dark, bold = true },
 		TelescopePromptPrefix = { fg = colors.function_name, bg = colors.bg_dark },
-		TelescopePromptCounter = { fg = colors.fg_dark },
+		TelescopePromptCounter = { fg = colors.fg_dark, bg = colors.bg_dark },
 
 		-- Telescope results
 		TelescopeResultsNormal = { fg = colors.fg, bg = colors.bg_light },
