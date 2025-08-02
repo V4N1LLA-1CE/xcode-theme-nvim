@@ -18,7 +18,7 @@ NOTE: The theme will work for other languages as well, but colour usage for lang
 
 ```lua
 {
-  "V4N1LLA-1CE/xcodedark-nvim",
+  "V4N1LLA-1CE/xcodedark.nvim",
   lazy = false,
   priority = 1000,
   config = function()
@@ -44,7 +44,7 @@ NOTE: The theme will work for other languages as well, but colour usage for lang
 
 ```lua
 use {
-  "V4N1LLA-1CE/xcodedark-nvim",
+  "V4N1LLA-1CE/xcodedark.nvim",
   config = function()
     require("xcodedark").setup()
     vim.cmd.colorscheme("xcodedark")
