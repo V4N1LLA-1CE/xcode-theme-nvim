@@ -1,4 +1,4 @@
-# Xcode Dark Theme for Neovim
+# Xcodedark Theme for Neovim
 
 A neovim theme that mimics xcodedark from xcode16.
 
