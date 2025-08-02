@@ -139,9 +139,10 @@ function M.setup(colors)
 		-- Go specific
 		goPackage = { fg = colors.keyword },
 		goImport = { fg = colors.preprocessor }, -- Pink for imports
-		goType = { fg = colors.type },
-		goFunction = { fg = colors.type }, -- Function names bluish
-		goMethod = { fg = colors.type }, -- Method names bluish
+		goType = { fg = colors.constant }, -- Go types use same blue as nil
+		goStruct = { fg = colors.constant }, -- Go structs use same blue as nil
+		goFunction = { fg = colors.constant }, -- Function names use same blue as nil
+		goMethod = { fg = colors.constant }, -- Method names use same blue as nil
 		goBuiltins = { fg = colors.function_name }, -- Built-in functions green
 		goConstants = { fg = colors.constant },
 

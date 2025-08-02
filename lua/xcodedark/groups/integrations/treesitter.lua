@@ -143,12 +143,13 @@ function M.setup(colors)
 
 		-- Go specific (for your Go code example)
 		["@keyword.function.go"] = { fg = colors.keyword },
-		["@type.builtin.go"] = { fg = colors.type }, -- Go built-in types back to blue
-		["@type.go"] = { fg = colors.type }, -- Go types back to blue
+		["@type.builtin.go"] = { fg = colors.constant }, -- Go built-in types use same blue as nil
+		["@type.go"] = { fg = colors.constant }, -- Go types use same blue as nil
+		["@type.definition.go"] = { fg = colors.constant }, -- Go struct definitions use same blue as nil
 		["@function.builtin.go"] = { fg = colors.function_name },
-		["@function.go"] = { fg = colors.type }, -- Go functions should be bluish like types
-		["@function.call.go"] = { fg = colors.type }, -- Go function calls bluish
-		["@function.method.go"] = { fg = colors.type }, -- Go methods bluish
+		["@function.go"] = { fg = colors.constant }, -- Go functions use same blue as nil
+		["@function.call.go"] = { fg = colors.constant }, -- Go function calls use same blue as nil
+		["@function.method.go"] = { fg = colors.constant }, -- Go methods use same blue as nil
 		["@variable.parameter.go"] = { fg = colors.purple }, -- Go parameters purple
 		["@parameter.go"] = { fg = colors.purple }, -- Go parameters purple (alternative capture)
 
