@@ -7,8 +7,13 @@ function M.setup(colors)
 		NormalFloat = { fg = colors.fg, bg = colors.bg_light },
 		NormalNC = { fg = colors.fg, bg = colors.bg },
 
-		-- Cursor and lines (updated colors)
+		-- Cursor and lines (updated colors with enhanced cursor settings)
 		Cursor = { fg = colors.bg, bg = colors.cursor },
+		CursorInsert = { fg = colors.bg, bg = colors.cursor },
+		CursorVisual = { fg = colors.bg, bg = colors.cursor },
+		CursorReplace = { fg = colors.bg, bg = colors.cursor },
+		CursorCommand = { fg = colors.bg, bg = colors.cursor },
+		lCursor = { fg = colors.bg, bg = colors.cursor },
 		CursorLine = { bg = colors.cursor_line },
 		CursorLineNr = { fg = colors.line_number_current, bg = colors.gutter_bg, bold = true },
 		CursorColumn = { bg = colors.cursor_line },
