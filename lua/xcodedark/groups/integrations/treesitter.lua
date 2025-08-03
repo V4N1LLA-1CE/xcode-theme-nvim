@@ -4,7 +4,7 @@ function M.setup(colors)
 	local highlights = {
 		-- Identifiers (more balanced approach)
 		["@variable"] = { fg = colors.fg }, -- Most variables should be white, not green
-		["@variable.builtin"] = { fg = colors.keyword }, -- Built-ins like 'this', 'self' should be pink
+		["@variable.builtin"] = { fg = colors.keyword, bold = true }, -- Built-ins like 'this', 'self' should be pink and bold
 		["@variable.parameter"] = { fg = colors.purple }, -- Parameters purple like Xcode
 		["@variable.member"] = { fg = colors.property }, -- Object properties stay green
 
@@ -30,7 +30,7 @@ function M.setup(colors)
 		["@character.special"] = { fg = colors.operator },
 
 		-- Booleans and numbers
-		["@boolean"] = { fg = colors.boolean },
+		["@boolean"] = { fg = colors.boolean, bold = true },
 		["@number"] = { fg = colors.number },
 		["@number.float"] = { fg = colors.number },
 
@@ -38,7 +38,7 @@ function M.setup(colors)
 		["@type"] = { fg = colors.type },
 		["@type.builtin"] = { fg = colors.type },
 		["@type.definition"] = { fg = colors.type },
-		["@type.qualifier"] = { fg = colors.keyword },
+		["@type.qualifier"] = { fg = colors.keyword, bold = true },
 
 		-- Attributes and properties
 		["@attribute"] = { fg = colors.attribute },
@@ -54,21 +54,21 @@ function M.setup(colors)
 		["@function.method.call"] = { fg = colors.type }, -- Method calls bluish
 		["@constructor"] = { fg = colors.type }, -- Constructors should be type color
 
-		-- Keywords and operators
-		["@keyword"] = { fg = colors.keyword }, -- Pink
-		["@keyword.coroutine"] = { fg = colors.keyword },
-		["@keyword.function"] = { fg = colors.keyword },
-		["@keyword.operator"] = { fg = colors.keyword },
-		["@keyword.import"] = { fg = colors.preprocessor }, -- Pink for imports
-		["@keyword.storage"] = { fg = colors.keyword },
-		["@keyword.repeat"] = { fg = colors.keyword },
-		["@keyword.return"] = { fg = colors.keyword },
-		["@keyword.debug"] = { fg = colors.keyword },
-		["@keyword.exception"] = { fg = colors.keyword },
-		["@keyword.conditional"] = { fg = colors.keyword },
+		-- Keywords and operators (BOLD keywords)
+		["@keyword"] = { fg = colors.keyword, bold = true }, -- Pink and BOLD
+		["@keyword.coroutine"] = { fg = colors.keyword, bold = true },
+		["@keyword.function"] = { fg = colors.keyword, bold = true },
+		["@keyword.operator"] = { fg = colors.keyword, bold = true },
+		["@keyword.import"] = { fg = colors.preprocessor, bold = true }, -- Pink for imports and BOLD
+		["@keyword.storage"] = { fg = colors.keyword, bold = true },
+		["@keyword.repeat"] = { fg = colors.keyword, bold = true },
+		["@keyword.return"] = { fg = colors.keyword, bold = true },
+		["@keyword.debug"] = { fg = colors.keyword, bold = true },
+		["@keyword.exception"] = { fg = colors.keyword, bold = true },
+		["@keyword.conditional"] = { fg = colors.keyword, bold = true },
 		["@keyword.conditional.ternary"] = { fg = colors.operator },
-		["@keyword.directive"] = { fg = colors.preprocessor }, -- Pink
-		["@keyword.directive.define"] = { fg = colors.preprocessor }, -- Pink
+		["@keyword.directive"] = { fg = colors.preprocessor, bold = true }, -- Pink and BOLD
+		["@keyword.directive.define"] = { fg = colors.preprocessor, bold = true }, -- Pink and BOLD
 
 		-- Operators
 		["@operator"] = { fg = colors.operator },
@@ -92,17 +92,17 @@ function M.setup(colors)
 		-- Misc
 		["@error"] = { fg = colors.error },
 		["@none"] = {},
-		["@preproc"] = { fg = colors.preprocessor }, -- Pink
+		["@preproc"] = { fg = colors.preprocessor, bold = true }, -- Pink and BOLD
 
-		-- Tags (HTML/XML/JSX) - Make div/tags same as keywords (pink)
-		["@tag"] = { fg = colors.keyword }, -- Pink like keywords
+		-- Tags (HTML/XML/JSX) - Make div/tags same as keywords (pink and bold)
+		["@tag"] = { fg = colors.keyword, bold = true }, -- Pink like keywords and BOLD
 		["@tag.attribute"] = { fg = colors.property }, -- Attributes stay green
 		["@tag.delimiter"] = { fg = colors.punctuation },
 
 		-- Language specific adjustments
 
 		-- Swift specific treesitter groups
-		["@keyword.modifier.swift"] = { fg = colors.keyword },
+		["@keyword.modifier.swift"] = { fg = colors.keyword, bold = true },
 		["@attribute.swift"] = { fg = colors.swift_attribute },
 		["@parameter.swift"] = { fg = colors.purple }, -- Parameters purple
 		["@variable.parameter.swift"] = { fg = colors.purple }, -- Parameters purple
@@ -110,39 +110,39 @@ function M.setup(colors)
 		["@function.builtin.swift"] = { fg = colors.function_name },
 		["@function.swift"] = { fg = colors.type }, -- Swift functions bluish
 		["@function.call.swift"] = { fg = colors.type }, -- Swift function calls bluish
-		["@variable.builtin.swift"] = { fg = colors.keyword },
+		["@variable.builtin.swift"] = { fg = colors.keyword, bold = true },
 
 		-- Objective-C specific treesitter groups
-		["@keyword.directive.objc"] = { fg = colors.objc_directive }, -- Pink
+		["@keyword.directive.objc"] = { fg = colors.objc_directive, bold = true }, -- Pink and BOLD
 		["@type.builtin.objc"] = { fg = colors.type },
 		["@property.objc"] = { fg = colors.property },
 		["@parameter.objc"] = { fg = colors.fg }, -- Parameters white
 
 		-- Python specific
-		["@keyword.function.python"] = { fg = colors.keyword },
+		["@keyword.function.python"] = { fg = colors.keyword, bold = true },
 		["@constructor.python"] = { fg = colors.type },
 		["@function.builtin.python"] = { fg = colors.function_name },
 		["@type.builtin.python"] = { fg = colors.type },
-		["@variable.builtin.python"] = { fg = colors.keyword }, -- self, cls should be pink
+		["@variable.builtin.python"] = { fg = colors.keyword, bold = true }, -- self, cls should be pink and bold
 
 		-- JavaScript/TypeScript specific
 		["@constructor.javascript"] = { fg = colors.type },
-		["@keyword.function.javascript"] = { fg = colors.keyword },
+		["@keyword.function.javascript"] = { fg = colors.keyword, bold = true },
 		["@function.javascript"] = { fg = colors.type }, -- JS functions bluish
 		["@function.call.javascript"] = { fg = colors.type }, -- JS function calls bluish
-		["@variable.builtin.javascript"] = { fg = colors.keyword }, -- this, arguments should be pink
+		["@variable.builtin.javascript"] = { fg = colors.keyword, bold = true }, -- this, arguments should be pink and bold
 		["@variable.parameter.javascript"] = { fg = colors.purple }, -- JS parameters purple
 		["@parameter.javascript"] = { fg = colors.purple }, -- JS parameters purple
 		["@constructor.typescript"] = { fg = colors.type },
-		["@keyword.function.typescript"] = { fg = colors.keyword },
+		["@keyword.function.typescript"] = { fg = colors.keyword, bold = true },
 		["@function.typescript"] = { fg = colors.type }, -- TS functions bluish
 		["@function.call.typescript"] = { fg = colors.type }, -- TS function calls bluish
-		["@variable.builtin.typescript"] = { fg = colors.keyword },
+		["@variable.builtin.typescript"] = { fg = colors.keyword, bold = true },
 		["@variable.parameter.typescript"] = { fg = colors.purple }, -- TS parameters purple
 		["@parameter.typescript"] = { fg = colors.purple }, -- TS parameters purple
 
 		-- Go specific (for your Go code example)
-		["@keyword.function.go"] = { fg = colors.keyword },
+		["@keyword.function.go"] = { fg = colors.keyword, bold = true },
 		["@type.builtin.go"] = { fg = colors.constant }, -- Go built-in types use same blue as nil
 		["@type.go"] = { fg = colors.constant }, -- Go types use same blue as nil
 		["@type.definition.go"] = { fg = colors.constant }, -- Go struct definitions use same blue as nil
@@ -155,19 +155,19 @@ function M.setup(colors)
 
 		-- C/C++ specific
 		["@type.builtin.c"] = { fg = colors.type },
-		["@keyword.storage.c"] = { fg = colors.keyword },
-		["@preproc.c"] = { fg = colors.preprocessor }, -- Pink
+		["@keyword.storage.c"] = { fg = colors.keyword, bold = true },
+		["@preproc.c"] = { fg = colors.preprocessor, bold = true }, -- Pink and BOLD
 		["@variable.parameter.c"] = { fg = colors.fg },
 		["@variable.parameter.cpp"] = { fg = colors.fg },
 
 		-- Lua specific
 		["@constructor.lua"] = { fg = colors.fg },
-		["@keyword.function.lua"] = { fg = colors.keyword },
-		["@variable.builtin.lua"] = { fg = colors.keyword },
+		["@keyword.function.lua"] = { fg = colors.keyword, bold = true },
+		["@variable.builtin.lua"] = { fg = colors.keyword, bold = true },
 
 		-- Rust specific
 		["@attribute.rust"] = { fg = colors.attribute },
-		["@keyword.storage.rust"] = { fg = colors.keyword },
+		["@keyword.storage.rust"] = { fg = colors.keyword, bold = true },
 		["@type.builtin.rust"] = { fg = colors.type },
 		["@variable.parameter.rust"] = { fg = colors.fg },
 
@@ -183,16 +183,16 @@ function M.setup(colors)
 		["@string.css"] = { fg = colors.string },
 		["@number.css"] = { fg = colors.number },
 
-		-- HTML specific - divs and tags should be pink like keywords
-		["@tag.html"] = { fg = colors.keyword }, -- Pink like keywords
+		-- HTML specific - divs and tags should be pink like keywords and bold
+		["@tag.html"] = { fg = colors.keyword, bold = true }, -- Pink like keywords and BOLD
 		["@tag.attribute.html"] = { fg = colors.property }, -- Attributes green
 		["@string.html"] = { fg = colors.string },
 
 		-- JSX/TSX specific - React components and HTML tags
-		["@tag.jsx"] = { fg = colors.keyword }, -- Pink like keywords
-		["@tag.tsx"] = { fg = colors.keyword }, -- Pink like keywords
-		["@tag.builtin.jsx"] = { fg = colors.keyword }, -- HTML tags in JSX (div, span, etc.) should be pink
-		["@tag.builtin.tsx"] = { fg = colors.keyword }, -- HTML tags in TSX (div, span, etc.) should be pink
+		["@tag.jsx"] = { fg = colors.keyword, bold = true }, -- Pink like keywords and BOLD
+		["@tag.tsx"] = { fg = colors.keyword, bold = true }, -- Pink like keywords and BOLD
+		["@tag.builtin.jsx"] = { fg = colors.keyword, bold = true }, -- HTML tags in JSX (div, span, etc.) should be pink and bold
+		["@tag.builtin.tsx"] = { fg = colors.keyword, bold = true }, -- HTML tags in TSX (div, span, etc.) should be pink and bold
 		["@tag.attribute.jsx"] = { fg = colors.property },
 		["@tag.attribute.tsx"] = { fg = colors.property },
 
@@ -204,9 +204,9 @@ function M.setup(colors)
 		["@markup.heading.4"] = { fg = colors.function_name },
 		["@markup.heading.5"] = { fg = colors.function_name },
 		["@markup.heading.6"] = { fg = colors.function_name },
-		["@markup.list"] = { fg = colors.keyword },
+		["@markup.list"] = { fg = colors.keyword, bold = true },
 		["@markup.list.checked"] = { fg = colors.git_add },
-		["@markup.list.unchecked"] = { fg = colors.keyword },
+		["@markup.list.unchecked"] = { fg = colors.keyword, bold = true },
 		["@markup.link"] = { fg = colors.info },
 		["@markup.link.label"] = { fg = colors.info },
 		["@markup.link.url"] = { fg = colors.string, underline = true },

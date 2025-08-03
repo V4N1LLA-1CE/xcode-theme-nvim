@@ -1,6 +1,6 @@
 local colors = {
-	-- Base colors (Xcode 16 Default Dark)
-	bg = "#1E1E1E", -- Main editor background
+	-- Base colors (Updated with your specifications)
+	bg = "#292a31", -- New background color
 	bg_alt = "#2D2D30", -- Sidebar and secondary backgrounds
 	bg_dark = "#171717", -- Darker variant (debugging panels, etc.)
 	bg_light = "#252526", -- Lighter background (popups, floating windows)
@@ -38,17 +38,19 @@ local colors = {
 	swift_attribute = "#FD8F3F", -- @objc, @available, etc.
 	objc_directive = "#FF7AB2", -- #pragma, #import - Pink like keywords
 
-	-- UI Elements
-	cursor = "#FFFFFF", -- Text cursor
+	-- UI Elements (Updated)
+	cursor = "#ff5257", -- New cursor color (red)
 	cursor_line = "#2D2D30", -- Current line highlight
-	selection = "#264F78", -- Text selection background
+	selection = "#636f83", -- New selection background color
+	visual = "#636f83", -- Visual selection background (same as selection)
+	visual_light = "#3D5A7A", -- Lighter visual selection
 	search = "#613315", -- Search match background
 	search_fg = "#FFCC02", -- Search match text
 
 	-- Gutter and line numbers
 	line_number = "#858585", -- Line numbers
 	line_number_current = "#FFFFFF", -- Current line number
-	gutter_bg = "#1E1E1E", -- Gutter background
+	gutter_bg = "#292a31", -- Updated gutter background to match new bg
 
 	-- Borders and UI chrome
 	border = "#3E3E42", -- Window borders and separators
@@ -57,7 +59,7 @@ local colors = {
 	-- Status bar and tabs
 	status_bg = "#2D2D30", -- Status line background
 	status_fg = "#CCCCCC", -- Status line text
-	tab_active_bg = "#1E1E1E", -- Active tab background
+	tab_active_bg = "#292a31", -- Updated active tab background
 	tab_active_fg = "#FFFFFF", -- Active tab text
 	tab_inactive_bg = "#2D2D30", -- Inactive tab background
 	tab_inactive_fg = "#969696", -- Inactive tab text
@@ -105,10 +107,6 @@ local colors = {
 	-- Matching elements
 	match_paren = "#0099FF", -- Matching parentheses/brackets
 
-	-- Visual mode and selections
-	visual = "#264F78", -- Visual selection background
-	visual_light = "#3D5A7A", -- Lighter visual selection
-
 	-- Search incremental
 	inc_search = "#094771", -- Incremental search background
 
@@ -123,7 +121,7 @@ local colors = {
 	debug_current_line = "#2D5016", -- Current debug line
 
 	-- Terminal colors (matching Xcode's integrated terminal)
-	terminal_black = "#1E1E1E",
+	terminal_black = "#292a31", -- Updated to match new background
 	terminal_red = "#F14C4C",
 	terminal_green = "#67B7A4",
 	terminal_yellow = "#F1C232",

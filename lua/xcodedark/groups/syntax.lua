@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup(colors)
 	local highlights = {
-		-- Comments
+		-- Comments (keep normal weight for comments)
 		Comment = { fg = colors.comment, italic = true },
 
 		-- Constants
@@ -10,39 +10,39 @@ function M.setup(colors)
 		String = { fg = colors.string },
 		Character = { fg = colors.string },
 		Number = { fg = colors.number },
-		Boolean = { fg = colors.boolean },
+		Boolean = { fg = colors.boolean, bold = true }, -- Bold for booleans
 		Float = { fg = colors.number },
 
 		-- Identifiers (reduce green usage)
 		Identifier = { fg = colors.fg }, -- Most identifiers should be white
 		Function = { fg = colors.type }, -- Function names bluish like types
 
-		-- Statements
-		Statement = { fg = colors.keyword },
-		Conditional = { fg = colors.keyword },
-		Repeat = { fg = colors.keyword },
-		Label = { fg = colors.keyword },
+		-- Statements (keywords bold)
+		Statement = { fg = colors.keyword, bold = true },
+		Conditional = { fg = colors.keyword, bold = true },
+		Repeat = { fg = colors.keyword, bold = true },
+		Label = { fg = colors.keyword, bold = true },
 		Operator = { fg = colors.operator },
-		Keyword = { fg = colors.keyword },
-		Exception = { fg = colors.keyword },
+		Keyword = { fg = colors.keyword, bold = true },
+		Exception = { fg = colors.keyword, bold = true },
 
-		-- PreProcessor
-		PreProc = { fg = colors.preprocessor }, -- Pink like keywords/imports
-		Include = { fg = colors.preprocessor }, -- Pink for imports
-		Define = { fg = colors.preprocessor }, -- Pink
-		Macro = { fg = colors.preprocessor }, -- Pink
-		PreCondit = { fg = colors.preprocessor }, -- Pink
+		-- PreProcessor (keywords bold)
+		PreProc = { fg = colors.preprocessor, bold = true }, -- Pink like keywords/imports
+		Include = { fg = colors.preprocessor, bold = true }, -- Pink for imports
+		Define = { fg = colors.preprocessor, bold = true }, -- Pink
+		Macro = { fg = colors.preprocessor, bold = true }, -- Pink
+		PreCondit = { fg = colors.preprocessor, bold = true }, -- Pink
 
 		-- Types
 		Type = { fg = colors.type },
-		StorageClass = { fg = colors.keyword },
+		StorageClass = { fg = colors.keyword, bold = true },
 		Structure = { fg = colors.type },
 		Typedef = { fg = colors.type },
 
 		-- Special
 		Special = { fg = colors.attribute },
 		SpecialChar = { fg = colors.string },
-		Tag = { fg = colors.keyword }, -- Tags should be pink like keywords
+		Tag = { fg = colors.keyword, bold = true }, -- Tags should be pink like keywords
 		Delimiter = { fg = colors.punctuation },
 		SpecialComment = { fg = colors.comment, bold = true },
 		Debug = { fg = colors.error },
@@ -62,14 +62,14 @@ function M.setup(colors)
 		-- Additional syntax groups for better coverage
 
 		-- HTML/XML (tags should be pink like keywords)
-		htmlTag = { fg = colors.keyword }, -- Pink like keywords
-		htmlEndTag = { fg = colors.keyword }, -- Pink like keywords
-		htmlTagName = { fg = colors.keyword }, -- Pink like keywords
+		htmlTag = { fg = colors.keyword, bold = true }, -- Pink like keywords
+		htmlEndTag = { fg = colors.keyword, bold = true }, -- Pink like keywords
+		htmlTagName = { fg = colors.keyword, bold = true }, -- Pink like keywords
 		htmlArg = { fg = colors.property }, -- Attributes stay green
 		htmlString = { fg = colors.string },
 
 		-- CSS
-		cssTagName = { fg = colors.keyword }, -- CSS selectors pink
+		cssTagName = { fg = colors.keyword, bold = true }, -- CSS selectors pink
 		cssClassName = { fg = colors.function_name }, -- Class names green
 		cssIdentifier = { fg = colors.function_name }, -- IDs green
 		cssProp = { fg = colors.property }, -- Properties green
@@ -79,16 +79,16 @@ function M.setup(colors)
 		cssFunction = { fg = colors.type }, -- CSS functions bluish
 
 		-- JavaScript/TypeScript (more balanced)
-		javaScriptFunction = { fg = colors.keyword },
+		javaScriptFunction = { fg = colors.keyword, bold = true },
 		javaScriptIdentifier = { fg = colors.fg }, -- Most identifiers white
 		javaScriptMember = { fg = colors.property }, -- Object members green
 		javaScriptNumber = { fg = colors.number },
-		javaScriptNull = { fg = colors.boolean },
-		javaScriptUndefined = { fg = colors.boolean },
+		javaScriptNull = { fg = colors.boolean, bold = true },
+		javaScriptUndefined = { fg = colors.boolean, bold = true },
 
 		-- JSX specific syntax highlighting
-		jsxTag = { fg = colors.keyword }, -- JSX tags pink
-		jsxTagName = { fg = colors.keyword }, -- JSX tag names pink
+		jsxTag = { fg = colors.keyword, bold = true }, -- JSX tags pink
+		jsxTagName = { fg = colors.keyword, bold = true }, -- JSX tag names pink
 		jsxAttrib = { fg = colors.property }, -- JSX attributes green
 		jsxString = { fg = colors.string },
 		jsxComponentName = { fg = colors.type }, -- React component names bluish
@@ -100,31 +100,31 @@ function M.setup(colors)
 		pythonDecoratorName = { fg = colors.attribute },
 
 		-- Lua
-		luaFunction = { fg = colors.keyword },
+		luaFunction = { fg = colors.keyword, bold = true },
 		luaTable = { fg = colors.fg },
-		luaIn = { fg = colors.keyword },
+		luaIn = { fg = colors.keyword, bold = true },
 
 		-- C/C++
 		cIncluded = { fg = colors.string },
-		cDefine = { fg = colors.preprocessor }, -- Pink
-		cPreCondit = { fg = colors.preprocessor }, -- Pink
+		cDefine = { fg = colors.preprocessor, bold = true }, -- Pink
+		cPreCondit = { fg = colors.preprocessor, bold = true }, -- Pink
 		cType = { fg = colors.type },
-		cStorageClass = { fg = colors.keyword },
-		cppStructure = { fg = colors.keyword },
-		cppAccess = { fg = colors.keyword },
+		cStorageClass = { fg = colors.keyword, bold = true },
+		cppStructure = { fg = colors.keyword, bold = true },
+		cppAccess = { fg = colors.keyword, bold = true },
 
 		-- Swift specific
-		swiftImports = { fg = colors.preprocessor }, -- Pink for imports
+		swiftImports = { fg = colors.preprocessor, bold = true }, -- Pink for imports
 		swiftAttribute = { fg = colors.swift_attribute },
 		swiftType = { fg = colors.type },
-		swiftTypeDeclaration = { fg = colors.keyword },
-		swiftVarDeclaration = { fg = colors.keyword },
-		swiftFuncDefinition = { fg = colors.keyword },
+		swiftTypeDeclaration = { fg = colors.keyword, bold = true },
+		swiftVarDeclaration = { fg = colors.keyword, bold = true },
+		swiftFuncDefinition = { fg = colors.keyword, bold = true },
 		swiftInterpolatedWrapper = { fg = colors.operator },
 
 		-- Objective-C specific
-		objcDirective = { fg = colors.objc_directive }, -- Pink
-		objcStatement = { fg = colors.keyword },
+		objcDirective = { fg = colors.objc_directive, bold = true }, -- Pink
+		objcStatement = { fg = colors.keyword, bold = true },
 		objcType = { fg = colors.type },
 		objcClass = { fg = colors.type },
 		objcSuperclass = { fg = colors.type },
@@ -137,8 +137,8 @@ function M.setup(colors)
 		objcString = { fg = colors.string },
 
 		-- Go specific
-		goPackage = { fg = colors.keyword },
-		goImport = { fg = colors.preprocessor }, -- Pink for imports
+		goPackage = { fg = colors.keyword, bold = true },
+		goImport = { fg = colors.preprocessor, bold = true }, -- Pink for imports
 		goType = { fg = colors.constant }, -- Go types use same blue as nil
 		goStruct = { fg = colors.constant }, -- Go structs use same blue as nil
 		goFunction = { fg = colors.constant }, -- Function names use same blue as nil
@@ -150,19 +150,19 @@ function M.setup(colors)
 		jsonKeyword = { fg = colors.property }, -- Green
 		jsonString = { fg = colors.string },
 		jsonNumber = { fg = colors.number },
-		jsonBoolean = { fg = colors.boolean },
-		jsonNull = { fg = colors.boolean },
+		jsonBoolean = { fg = colors.boolean, bold = true },
+		jsonNull = { fg = colors.boolean, bold = true },
 
 		-- YAML
 		yamlKey = { fg = colors.property }, -- Green
 		yamlString = { fg = colors.string },
 		yamlNumber = { fg = colors.number },
-		yamlBoolean = { fg = colors.boolean },
-		yamlNull = { fg = colors.boolean },
+		yamlBoolean = { fg = colors.boolean, bold = true },
+		yamlNull = { fg = colors.boolean, bold = true },
 		yamlComment = { fg = colors.comment },
 
 		-- Markdown
-		markdownHeadingDelimiter = { fg = colors.keyword },
+		markdownHeadingDelimiter = { fg = colors.keyword, bold = true },
 		markdownH1 = { fg = colors.function_name, bold = true },
 		markdownH2 = { fg = colors.function_name, bold = true },
 		markdownH3 = { fg = colors.function_name, bold = true },
@@ -173,8 +173,8 @@ function M.setup(colors)
 		markdownCodeBlock = { fg = colors.string },
 		markdownCodeDelimiter = { fg = colors.operator },
 		markdownBlockquote = { fg = colors.comment },
-		markdownListMarker = { fg = colors.keyword },
-		markdownOrderedListMarker = { fg = colors.keyword },
+		markdownListMarker = { fg = colors.keyword, bold = true },
+		markdownOrderedListMarker = { fg = colors.keyword, bold = true },
 		markdownRule = { fg = colors.operator },
 		markdownLinkText = { fg = colors.info },
 		markdownUrl = { fg = colors.string, underline = true },
@@ -203,7 +203,7 @@ function M.setup(colors)
 		gitcommitFile = { fg = colors.fg },
 
 		-- Vim script
-		vimCommand = { fg = colors.keyword },
+		vimCommand = { fg = colors.keyword, bold = true },
 		vimFunction = { fg = colors.fg }, -- Function names white
 		vimUserFunc = { fg = colors.fg }, -- User functions white
 		vimVariable = { fg = colors.fg }, -- Variables white

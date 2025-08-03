@@ -14,11 +14,36 @@ local default_options = {
 	},
 	-- Style options
 	styles = {
-		comments = { italic = true },
-		keywords = {},
-		functions = {},
-		variables = {},
-		strings = {},
+		comments = { italic = true }, -- Comments remain italic, normal weight
+		keywords = { bold = true }, -- Keywords are bold by default
+		functions = {}, -- Functions use default weight (SF Mono Light Medium)
+		variables = {}, -- Variables use default weight (SF Mono Light Medium)
+		strings = {}, -- Strings use default weight (SF Mono Light Medium)
+		booleans = { bold = true }, -- Booleans are bold
+		types = {}, -- Types use default weight (SF Mono Light Medium)
+		constants = {}, -- Constants use default weight (SF Mono Light Medium)
+		operators = {}, -- Operators use default weight (SF Mono Light Medium)
+		punctuation = {}, -- Punctuation use default weight (SF Mono Light Medium)
+	},
+	-- Font weight configuration
+	font_weights = {
+		-- Most code elements will use SF Mono Light Medium (your terminal default)
+		-- Only specific elements will be bold or have different weights
+		default = {}, -- Uses terminal default (SF Mono Light Medium)
+		bold_elements = { -- Elements that should be bold
+			"keywords",
+			"booleans",
+			"conditionals",
+			"loops",
+			"imports",
+			"preprocessor",
+			"tags",
+			"storage_class",
+			"function_keywords",
+		},
+		italic_elements = { -- Elements that should be italic
+			"comments",
+		},
 	},
 	-- Terminal colors
 	terminal_colors = true,
@@ -172,6 +197,14 @@ function M.load(opts)
 		vim.api.nvim_set_hl(0, "TerminalNormal", { fg = colors.fg, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TerminalNormalFloat", { fg = colors.fg, bg = "NONE" })
 	end
+
+	-- Apply font weight customizations
+	-- Note: Since your terminal already has SF Mono configured, most text will
+	-- automatically use SF Mono Light Medium. We only need to explicitly set
+	-- bold for specific elements that should stand out.
+
+	-- The bold elements are already configured in the syntax and treesitter files
+	-- Comments remain with normal weight but italic
 end
 
 function M.setup(opts)

@@ -2,15 +2,15 @@ local M = {}
 
 function M.setup(colors)
 	local highlights = {
-		-- Editor UI
+		-- Editor UI (with font weight adjustments)
 		Normal = { fg = colors.fg, bg = colors.bg },
 		NormalFloat = { fg = colors.fg, bg = colors.bg_light },
 		NormalNC = { fg = colors.fg, bg = colors.bg },
 
-		-- Cursor and lines
+		-- Cursor and lines (updated colors)
 		Cursor = { fg = colors.bg, bg = colors.cursor },
 		CursorLine = { bg = colors.cursor_line },
-		CursorLineNr = { fg = colors.line_number_current, bg = colors.gutter_bg },
+		CursorLineNr = { fg = colors.line_number_current, bg = colors.gutter_bg, bold = true },
 		CursorColumn = { bg = colors.cursor_line },
 
 		-- Line numbers and gutter
@@ -18,7 +18,7 @@ function M.setup(colors)
 		SignColumn = { bg = colors.gutter_bg },
 		FoldColumn = { fg = colors.line_number, bg = colors.gutter_bg },
 
-		-- Visual selections
+		-- Visual selections (updated colors)
 		Visual = { bg = colors.visual },
 		VisualNOS = { bg = colors.visual },
 

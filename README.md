@@ -23,7 +23,9 @@ NOTE: The theme will work for other languages as well, but colour usage for lang
   priority = 1000,
   config = function()
     require("xcodedark").setup({
-      transparent = true,
+      -- New color scheme with your specifications
+      transparent = true, -- or false if you prefer solid background
+      
       integrations = {
         telescope = true,
         nvim_tree = true,
@@ -34,6 +36,22 @@ NOTE: The theme will work for other languages as well, but colour usage for lang
         which_key = true,
         notify = true,
       },
+      
+      -- Font weight customization
+      styles = {
+        comments = { italic = true }, -- Comments: italic, normal weight (SF Mono Light Medium)
+        keywords = { bold = true }, -- Keywords: bold (already configured)
+        functions = {}, -- Functions: SF Mono Light Medium
+        variables = {}, -- Variables: SF Mono Light Medium  
+        strings = {}, -- Strings: SF Mono Light Medium
+        booleans = { bold = true }, -- Booleans: bold
+        types = {}, -- Types: SF Mono Light Medium
+        constants = {}, -- Constants: SF Mono Light Medium
+        operators = {}, -- Operators: SF Mono Light Medium
+        punctuation = {}, -- Punctuation: SF Mono Light Medium
+      },
+      
+      terminal_colors = true,
     })
     vim.cmd.colorscheme("xcodedark")
   end,
@@ -46,7 +64,13 @@ NOTE: The theme will work for other languages as well, but colour usage for lang
 use {
   "V4N1LLA-1CE/xcodedark.nvim",
   config = function()
-    require("xcodedark").setup()
+    require("xcodedark").setup({
+      transparent = true,
+      styles = {
+        keywords = { bold = true }, -- Bold keywords by default
+        comments = { italic = true }, -- Italic comments, normal weight
+      }
+    })
     vim.cmd.colorscheme("xcodedark")
   end
 }
