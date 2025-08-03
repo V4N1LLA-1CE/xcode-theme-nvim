@@ -198,6 +198,50 @@ function M.load(opts)
 		vim.api.nvim_set_hl(0, "TerminalNormalFloat", { fg = colors.fg, bg = "NONE" })
 	end
 
+	-- CURSOR COLOR OVERRIDE SECTION
+	-- Force cursor colors to override terminal settings
+	vim.api.nvim_set_hl(0, "Cursor", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+	vim.api.nvim_set_hl(0, "CursorInsert", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+	vim.api.nvim_set_hl(0, "CursorVisual", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+	vim.api.nvim_set_hl(0, "CursorReplace", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+	vim.api.nvim_set_hl(0, "CursorCommand", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+	vim.api.nvim_set_hl(0, "lCursor", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+	vim.api.nvim_set_hl(0, "TermCursor", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+	vim.api.nvim_set_hl(0, "TermCursorNC", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+
+	-- Set cursor shape and color for different modes
+	vim.opt.guicursor = {
+		"n-v-c-sm:block-Cursor",
+		"i-ci-ve:ver25-CursorInsert",
+		"r-cr-o:hor20-CursorReplace",
+		"a:blinkwait700-blinkoff400-blinkon250",
+	}
+
+	-- Terminal escape sequences for cursor color (may help with some terminals)
+	if vim.fn.has("termguicolors") == 1 then
+		vim.cmd(string.format(
+			[[
+			let &t_SI = "\e]12;%s\x7"
+			let &t_SR = "\e]12;%s\x7"
+			let &t_EI = "\e]12;%s\x7"
+		]],
+			colors.cursor,
+			colors.cursor,
+			colors.cursor
+		))
+	end
+
+	-- Create autocmd to reapply cursor color after certain events
+	vim.api.nvim_create_autocmd({ "ColorScheme", "VimEnter", "WinEnter", "BufEnter" }, {
+		pattern = "*",
+		callback = function()
+			if vim.g.colours_name == "xcodedark" then
+				vim.api.nvim_set_hl(0, "Cursor", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+				vim.api.nvim_set_hl(0, "TermCursor", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+			end
+		end,
+	})
+
 	-- Apply font weight customizations
 	-- Note: Since your terminal already has SF Mono configured, most text will
 	-- automatically use SF Mono Light Medium. We only need to explicitly set
