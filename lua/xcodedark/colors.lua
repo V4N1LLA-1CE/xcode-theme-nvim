@@ -40,6 +40,7 @@ local colors = {
 
 	-- UI Elements (Updated)
 	cursor = "#ff5257", -- New cursor color (red)
+	cursor_visual = "#8cd0e3", -- Cursor colour for visual mode (light blue)
 	cursor_line = "#2D2D30", -- Current line highlight
 	selection = "#636f83", -- New selection background color
 	visual = "#636f83", -- Visual selection background (same as selection)

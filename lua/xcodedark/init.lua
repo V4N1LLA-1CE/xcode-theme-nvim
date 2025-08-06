@@ -202,7 +202,7 @@ function M.load(opts)
 	-- Force cursor colors to override terminal settings
 	vim.api.nvim_set_hl(0, "Cursor", { fg = colors.bg, bg = colors.cursor, blend = 0 })
 	vim.api.nvim_set_hl(0, "CursorInsert", { fg = colors.bg, bg = colors.cursor, blend = 0 })
-	vim.api.nvim_set_hl(0, "CursorVisual", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+	vim.api.nvim_set_hl(0, "CursorVisual", { fg = colors.bg, bg = colors.cursor_visual, blend = 0 })
 	vim.api.nvim_set_hl(0, "CursorReplace", { fg = colors.bg, bg = colors.cursor, blend = 0 })
 	vim.api.nvim_set_hl(0, "CursorCommand", { fg = colors.bg, bg = colors.cursor, blend = 0 })
 	vim.api.nvim_set_hl(0, "lCursor", { fg = colors.bg, bg = colors.cursor, blend = 0 })
@@ -215,6 +215,8 @@ function M.load(opts)
 		"i-ci-ve:ver25-CursorInsert",
 		"r-cr-o:hor20-CursorReplace",
 		"a:blinkwait700-blinkoff400-blinkon250",
+		-- Add visual mode cursor with specific color
+		"v:block-CursorVisual",
 	}
 
 	-- Terminal escape sequences for cursor color (may help with some terminals)
@@ -237,6 +239,7 @@ function M.load(opts)
 		callback = function()
 			if vim.g.colours_name == "xcodedark" then
 				vim.api.nvim_set_hl(0, "Cursor", { fg = colors.bg, bg = colors.cursor, blend = 0 })
+				vim.api.nvim_set_hl(0, "CursorVisual", { fg = colors.bg, bg = colors.cursor_visual, blend = 0 })
 				vim.api.nvim_set_hl(0, "TermCursor", { fg = colors.bg, bg = colors.cursor, blend = 0 })
 			end
 		end,

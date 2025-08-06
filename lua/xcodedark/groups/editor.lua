@@ -10,7 +10,7 @@ function M.setup(colors)
 		-- Cursor and lines (updated colors with enhanced cursor settings)
 		Cursor = { fg = colors.bg, bg = colors.cursor },
 		CursorInsert = { fg = colors.bg, bg = colors.cursor },
-		CursorVisual = { fg = colors.bg, bg = colors.cursor },
+		CursorVisual = { fg = colors.bg, bg = colors.cursor_visual },
 		CursorReplace = { fg = colors.bg, bg = colors.cursor },
 		CursorCommand = { fg = colors.bg, bg = colors.cursor },
 		lCursor = { fg = colors.bg, bg = colors.cursor },
