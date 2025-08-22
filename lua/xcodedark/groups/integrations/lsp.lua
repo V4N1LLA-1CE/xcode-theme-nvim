@@ -4,7 +4,7 @@ function M.setup(colors)
 	local highlights = {
 		-- LSP semantic tokens
 		["@lsp.type.class"] = { fg = colors.type },
-		["@lsp.type.decorator"] = { fg = colors.attribute },
+		["@lsp.type.decorator"] = { fg = colors.fg },
 		["@lsp.type.enum"] = { fg = colors.type },
 		["@lsp.type.enumMember"] = { fg = colors.constant },
 		["@lsp.type.function"] = { fg = colors.function_name },
@@ -28,53 +28,6 @@ function M.setup(colors)
 		["@lsp.mod.modification"] = { underline = true },
 		["@lsp.mod.documentation"] = { fg = colors.comment },
 		["@lsp.mod.defaultLibrary"] = { fg = colors.type },
-
-		-- LSP type and modifier combinations for better specificity
-		["@lsp.type.function.swift"] = { fg = colors.function_name },
-		["@lsp.type.method.swift"] = { fg = colors.function_name },
-		["@lsp.type.property.swift"] = { fg = colors.property },
-		["@lsp.type.variable.swift"] = { fg = colors.variable },
-		["@lsp.type.parameter.swift"] = { fg = colors.parameter },
-		["@lsp.type.class.swift"] = { fg = colors.type },
-		["@lsp.type.struct.swift"] = { fg = colors.type },
-		["@lsp.type.enum.swift"] = { fg = colors.type },
-		["@lsp.type.enumMember.swift"] = { fg = colors.constant },
-		["@lsp.type.protocol.swift"] = { fg = colors.type },
-		["@lsp.type.extension.swift"] = { fg = colors.type },
-		["@lsp.type.namespace.swift"] = { fg = colors.type },
-		["@lsp.type.typeAlias.swift"] = { fg = colors.type },
-		["@lsp.type.generic.swift"] = { fg = colors.type },
-
-		-- Objective-C specific LSP highlights
-		["@lsp.type.function.objc"] = { fg = colors.function_name },
-		["@lsp.type.method.objc"] = { fg = colors.function_name },
-		["@lsp.type.property.objc"] = { fg = colors.property },
-		["@lsp.type.variable.objc"] = { fg = colors.variable },
-		["@lsp.type.parameter.objc"] = { fg = colors.parameter },
-		["@lsp.type.class.objc"] = { fg = colors.type },
-		["@lsp.type.interface.objc"] = { fg = colors.type },
-		["@lsp.type.protocol.objc"] = { fg = colors.type },
-		["@lsp.type.category.objc"] = { fg = colors.type },
-		["@lsp.type.ivar.objc"] = { fg = colors.variable },
-
-		-- C/C++ specific LSP highlights
-		["@lsp.type.function.c"] = { fg = colors.function_name },
-		["@lsp.type.function.cpp"] = { fg = colors.function_name },
-		["@lsp.type.method.cpp"] = { fg = colors.function_name },
-		["@lsp.type.property.cpp"] = { fg = colors.property },
-		["@lsp.type.variable.c"] = { fg = colors.variable },
-		["@lsp.type.variable.cpp"] = { fg = colors.variable },
-		["@lsp.type.parameter.c"] = { fg = colors.parameter },
-		["@lsp.type.parameter.cpp"] = { fg = colors.parameter },
-		["@lsp.type.class.cpp"] = { fg = colors.type },
-		["@lsp.type.struct.c"] = { fg = colors.type },
-		["@lsp.type.struct.cpp"] = { fg = colors.type },
-		["@lsp.type.enum.c"] = { fg = colors.type },
-		["@lsp.type.enum.cpp"] = { fg = colors.type },
-		["@lsp.type.enumMember.c"] = { fg = colors.constant },
-		["@lsp.type.enumMember.cpp"] = { fg = colors.constant },
-		["@lsp.type.namespace.cpp"] = { fg = colors.type },
-		["@lsp.type.typeAlias.cpp"] = { fg = colors.type },
 
 		-- Python specific LSP highlights
 		["@lsp.type.function.python"] = { fg = colors.function_name },
@@ -105,21 +58,6 @@ function M.setup(colors)
 		["@lsp.type.enumMember.typescript"] = { fg = colors.constant },
 		["@lsp.type.namespace.typescript"] = { fg = colors.type },
 		["@lsp.type.typeParameter.typescript"] = { fg = colors.type },
-
-		-- Rust specific LSP highlights
-		["@lsp.type.function.rust"] = { fg = colors.function_name },
-		["@lsp.type.method.rust"] = { fg = colors.function_name },
-		["@lsp.type.property.rust"] = { fg = colors.property },
-		["@lsp.type.variable.rust"] = { fg = colors.variable },
-		["@lsp.type.parameter.rust"] = { fg = colors.parameter },
-		["@lsp.type.struct.rust"] = { fg = colors.type },
-		["@lsp.type.enum.rust"] = { fg = colors.type },
-		["@lsp.type.enumMember.rust"] = { fg = colors.constant },
-		["@lsp.type.trait.rust"] = { fg = colors.type },
-		["@lsp.type.typeAlias.rust"] = { fg = colors.type },
-		["@lsp.type.lifetime.rust"] = { fg = colors.operator },
-		["@lsp.type.macro.rust"] = { fg = colors.function_name },
-		["@lsp.type.derive.rust"] = { fg = colors.attribute },
 
 		-- Go specific LSP highlights
 		["@lsp.type.function.go"] = { fg = colors.function_name },
