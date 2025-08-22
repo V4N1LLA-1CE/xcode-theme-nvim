@@ -79,8 +79,7 @@ function M.setup(colors)
 		-- Java specific LSP highlights
 		-- spring boot annotations
 		["@lsp.type.annotation.java"] = { fg = colors.preprocessor },
-		["@lsp.mod.public.java"] = { fg = colors.preprocessor },
-		["@lsp.typemod.annotation.public.java"] = { fg = colors.preprocessor },
+		["@attribute.java"] = { fg = colors.preprocessor },
 
 		-- LSP references and definitions
 		LspReferenceText = { bg = colors.bg_highlight },
