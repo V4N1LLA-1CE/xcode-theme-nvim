@@ -76,11 +76,6 @@ function M.setup(colors)
 		["@lsp.type.variable.lua"] = { fg = colors.variable },
 		["@lsp.type.parameter.lua"] = { fg = colors.parameter },
 
-		-- Java specific LSP highlights
-		-- spring boot annotations
-		["@lsp.type.annotation.java"] = { fg = colors.preprocessor },
-		["@attribute.java"] = { fg = colors.preprocessor },
-
 		-- LSP references and definitions
 		LspReferenceText = { bg = colors.bg_highlight },
 		LspReferenceRead = { bg = colors.bg_highlight },
