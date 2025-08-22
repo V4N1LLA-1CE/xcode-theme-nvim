@@ -4,7 +4,7 @@ function M.setup(colors)
 	local highlights = {
 		-- LSP semantic tokens
 		["@lsp.type.class"] = { fg = colors.type },
-		["@lsp.type.decorator"] = { fg = colors.fg },
+		["@lsp.type.decorator"] = { fg = colors.attribute },
 		["@lsp.type.enum"] = { fg = colors.type },
 		["@lsp.type.enumMember"] = { fg = colors.constant },
 		["@lsp.type.function"] = { fg = colors.function_name },
@@ -75,6 +75,12 @@ function M.setup(colors)
 		["@lsp.type.property.lua"] = { fg = colors.property },
 		["@lsp.type.variable.lua"] = { fg = colors.variable },
 		["@lsp.type.parameter.lua"] = { fg = colors.parameter },
+
+		-- Java specific LSP highlights
+		-- spring boot annotations
+		["@lsp.type.annotation.java"] = { fg = colors.preprocessor },
+		["@lsp.mod.public.java"] = { fg = colors.preprocessor },
+		["@lsp.typemod.annotation.public.java"] = { fg = colors.preprocessor },
 
 		-- LSP references and definitions
 		LspReferenceText = { bg = colors.bg_highlight },
