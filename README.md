@@ -1,6 +1,6 @@
 # Xcodedark Theme for Neovim
 
-A neovim theme that mimics xcodedark from xcode16. I was inspired by xcode theme as I thought it was super clean in my iOS development course in university, so I decided to make a version that is kind off accurate for my main languages (Go, Typescript, and hopefully Java soon). 
+A neovim theme that mimics xcodedark from xcode16. I was inspired by xcode theme as I thought it was super clean in my iOS development course in university, so I decided to make a version that is kind of accurate for my main languages (Go, Typescript, and hopefully Java soon). 
 
 NOTE: The theme will work for other languages as well, but colour usage for language features may not be accurate to xcode outside of Go and Typescript.
 
