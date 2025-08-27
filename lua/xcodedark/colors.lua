@@ -29,7 +29,7 @@ local colors = {
 	purple_light = "#E5C7FF", -- Even lighter purple variant
 
 	-- Annotations and decorators (used for java springboot mainly)
-	annotations = "#8cd0e3",
+	annotations = "#f9ad9a",
 
 	-- Language-specific elements
 	preprocessor = "#FF7AB2", -- Preprocessor directives, imports - Pink like keywords
