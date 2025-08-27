@@ -15,7 +15,7 @@ function M.setup(colors)
 		CursorCommand = { fg = colors.bg, bg = colors.cursor },
 		lCursor = { fg = colors.bg, bg = colors.cursor },
 		CursorLine = { bg = colors.cursor_line },
-		CursorLineNr = { fg = colors.cursor, bg = colors.bg_highlight, bold = true },
+		CursorLineNr = { fg = colors.cursor, bold = true, underline = true },
 		CursorColumn = { bg = colors.cursor_line },
 
 		-- Line numbers and gutter
