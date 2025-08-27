@@ -171,6 +171,14 @@ function M.setup(colors)
 		["@type.builtin.rust"] = { fg = colors.type },
 		["@variable.parameter.rust"] = { fg = colors.fg },
 
+		-- Java specific
+		["@attribute.java"] = { fg = colors.keyword, bold = true }, -- Spring Boot annotations like @RestController, @Autowired
+		["@keyword.function.java"] = { fg = colors.keyword, bold = true },
+		["@constructor.java"] = { fg = colors.type },
+		["@function.builtin.java"] = { fg = colors.function_name },
+		["@type.builtin.java"] = { fg = colors.type },
+		["@variable.parameter.java"] = { fg = colors.purple }, -- Java parameters purple
+
 		-- JSON specific
 		["@label.json"] = { fg = colors.property },
 
