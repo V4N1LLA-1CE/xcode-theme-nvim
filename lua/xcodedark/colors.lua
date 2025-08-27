@@ -27,6 +27,9 @@ local colors = {
 	-- Additional purple for specific contexts
 	purple = "#D2A8FF", -- Xcode-style lighter purple for parameters/argument types
 	purple_light = "#E5C7FF", -- Even lighter purple variant
+	
+	-- Lighter pink variant for annotations
+	keyword_light = "#FFB3D6", -- Lighter pinkish red for annotations
 
 	-- Language-specific elements
 	preprocessor = "#FF7AB2", -- Preprocessor directives, imports - Pink like keywords
