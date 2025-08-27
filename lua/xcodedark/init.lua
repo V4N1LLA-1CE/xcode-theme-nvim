@@ -172,7 +172,7 @@ function M.load(opts)
 		vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
 		vim.api.nvim_set_hl(0, "FoldColumn", { fg = colors.line_number, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "LineNr", { fg = colors.line_number, bg = "NONE" })
-		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.line_number_current, bg = "NONE" })
+		vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.cursor, bg = "NONE", bold = true, underline = true })
 
 		-- Fix incline transparency
 		vim.api.nvim_set_hl(0, "InclineNormal", { fg = colors.fg_alt, bg = "NONE" })
