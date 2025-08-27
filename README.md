@@ -150,7 +150,6 @@ Optimised syntax highlighting for:
 Contributions are welcome! Please feel free to submit issues and pull requests.
 
 When reporting issues, please include:
-- Neovim version (`nvim --version`)
 - Plugin manager and configuration
 - Screenshots if applicable
 - Minimal reproduction steps
