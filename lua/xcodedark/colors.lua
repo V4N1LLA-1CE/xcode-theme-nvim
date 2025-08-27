@@ -28,9 +28,6 @@ local colors = {
 	purple = "#D2A8FF", -- Xcode-style lighter purple for parameters/argument types
 	purple_light = "#E5C7FF", -- Even lighter purple variant
 
-	-- Annotations and decorators (used for java springboot mainly)
-	annotations = "#f9ad9a",
-
 	-- Language-specific elements
 	preprocessor = "#FF7AB2", -- Preprocessor directives, imports - Pink like keywords
 	attribute = "#FD8F3F", -- Attributes and decorators - Orange
