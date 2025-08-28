@@ -267,7 +267,7 @@ function M.load(opts)
 	-- The bold elements are already configured in the syntax and treesitter files
 	-- Comments remain with normal weight but italic
 
-	-- FINAL OVERRIDE: Force autocompletion background and borders regardless of transparency
+	-- FINAL OVERRIDE: Force autocompletion background regardless of transparency
 	vim.api.nvim_set_hl(0, "Pmenu", { fg = colors.pmenu_fg, bg = "#2e303e" })
 	vim.api.nvim_set_hl(0, "PmenuSel", { fg = colors.pmenu_sel_fg, bg = colors.pmenu_sel_bg })
 	vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#2e303e" })
@@ -277,37 +277,6 @@ function M.load(opts)
 	vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = colors.function_name, bg = "#2e303e" })
 	vim.api.nvim_set_hl(0, "CmpItemKind", { fg = colors.type, bg = "#2e303e" })
 	vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = colors.fg_dark, bg = "#2e303e" })
-	
-	-- Rounded border styling for completion menus
-	vim.api.nvim_set_hl(0, "CmpBorder", { fg = "#5a5d6e", bg = "#2e303e" })
-	vim.api.nvim_set_hl(0, "CmpDocumentationBorder", { fg = "#5a5d6e", bg = colors.bg_light })
-	vim.api.nvim_set_hl(0, "CmpDocumentation", { fg = colors.fg, bg = colors.bg_light })
-
-	-- Auto-configure nvim-cmp with rounded borders if available
-	vim.defer_fn(function()
-		local ok, cmp = pcall(require, 'cmp')
-		if ok and cmp.setup then
-			-- Get current config or create new one
-			local current_config = cmp.get_config() or {}
-			
-			-- Merge with rounded border configuration
-			local border_config = {
-				window = {
-					completion = vim.tbl_deep_extend('force', current_config.window and current_config.window.completion or {}, {
-						border = 'rounded',
-						winhighlight = 'Normal:CmpItemAbbr,CursorLine:CmpItemAbbrMatch,Search:None,FloatBorder:CmpBorder',
-					}),
-					documentation = vim.tbl_deep_extend('force', current_config.window and current_config.window.documentation or {}, {
-						border = 'rounded',
-						winhighlight = 'Normal:CmpDocumentation,FloatBorder:CmpDocumentationBorder',
-					}),
-				},
-			}
-			
-			-- Apply the border configuration
-			cmp.setup(border_config)
-		end
-	end, 100) -- Small delay to ensure cmp is fully loaded
 end
 
 function M.setup(opts)
