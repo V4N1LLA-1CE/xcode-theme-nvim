@@ -74,8 +74,7 @@ function M.load(opts)
 		colors.status_bg = "NONE"
 		colors.tab_active_bg = "NONE"
 		colors.tab_inactive_bg = "NONE"
-		-- Keep pmenu_bg with solid color to override transparency
-		-- colors.pmenu_bg = "NONE"  -- Commented out to keep autocompletion background
+		colors.pmenu_bg = "NONE"
 		colors.fold_bg = "NONE"
 		-- Also make incline and which-key transparent
 		colors.bg_highlight = "NONE"
@@ -266,17 +265,6 @@ function M.load(opts)
 
 	-- The bold elements are already configured in the syntax and treesitter files
 	-- Comments remain with normal weight but italic
-
-	-- FINAL OVERRIDE: Force autocompletion background regardless of transparency
-	vim.api.nvim_set_hl(0, "Pmenu", { fg = colors.pmenu_fg, bg = "#2e303e" })
-	vim.api.nvim_set_hl(0, "PmenuSel", { fg = colors.pmenu_sel_fg, bg = colors.pmenu_sel_bg })
-	vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#2e303e" })
-	vim.api.nvim_set_hl(0, "PmenuThumb", { bg = colors.scrollbar_thumb })
-	vim.api.nvim_set_hl(0, "CmpItemAbbr", { fg = colors.pmenu_fg, bg = "#2e303e" })
-	vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = colors.function_name, bg = "#2e303e", bold = true })
-	vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = colors.function_name, bg = "#2e303e" })
-	vim.api.nvim_set_hl(0, "CmpItemKind", { fg = colors.type, bg = "#2e303e" })
-	vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = colors.fg_dark, bg = "#2e303e" })
 end
 
 function M.setup(opts)
