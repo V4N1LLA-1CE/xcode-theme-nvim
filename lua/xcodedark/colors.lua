@@ -91,7 +91,7 @@ local colors = {
 	note = "#0099FF", -- NOTE comments - Blue
 
 	-- Completion and popup menus (enhanced for better visibility)
-	pmenu_bg = "#d64f6f", -- Popup menu background (darker for better contrast)
+	pmenu_bg = "#454167", -- Popup menu background (darker for better contrast)
 	pmenu_fg = "#CCCCCC", -- Popup menu text
 	pmenu_sel_bg = "#E91E63", -- Selected popup item background (brighter blue)
 	pmenu_sel_fg = "#FFFFFF", -- Selected popup item text
