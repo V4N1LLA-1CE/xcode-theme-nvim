@@ -24,8 +24,8 @@ function M.setup(colors)
 		FoldColumn = { fg = colors.line_number, bg = colors.gutter_bg },
 
 		-- Visual selections (updated colors)
-		Visual = { bg = colors.visual },
-		VisualNOS = { bg = colors.visual },
+		Visual = { bg = colors.visualmode_highlight_bg },
+		VisualNOS = { bg = colors.visualmode_highlight_bg },
 
 		-- Search
 		Search = { fg = colors.search_fg, bg = colors.search },

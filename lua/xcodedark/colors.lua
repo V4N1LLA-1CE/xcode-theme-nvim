@@ -41,8 +41,9 @@ local colors = {
 	cursor = "#ff5257", -- New cursor color (red)
 	cursor_visual = "#8cd0e3", -- Cursor colour for visual mode (light blue)
 	cursor_line = "#2D2D30", -- Current line highlight
-	selection = "#636f83", -- New selection background color
+	selection = "#FF7AB2", -- New selection background color (matches keyword)
 	visual = "#636f83", -- Visual selection background (keep original for text selection)
+	visualmode_highlight_bg = "#636f83", -- Visual mode text selection background
 	search = "#613315", -- Search match background
 	search_fg = "#FFCC02", -- Search match text
 
