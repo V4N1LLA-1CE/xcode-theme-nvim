@@ -57,19 +57,19 @@ function M.setup(colors)
 		TermCursor = { fg = colors.bg, bg = colors.cursor },
 		TermCursorNC = { fg = colors.bg, bg = colors.cursor },
 
-		-- Popup menus (using custom background color that overrides transparency)
-		Pmenu = { fg = colors.pmenu_fg, bg = "#2e303e" },
+		-- Popup menus
+		Pmenu = { fg = colors.pmenu_fg, bg = colors.pmenu_bg },
 		PmenuSel = { fg = colors.pmenu_sel_fg, bg = colors.pmenu_sel_bg },
-		PmenuSbar = { bg = "#2e303e" },
+		PmenuSbar = { bg = colors.pmenu_scrollbar },
 		PmenuThumb = { bg = colors.scrollbar_thumb },
 
-		-- Completion menu kinds (with consistent background)
-		CmpItemAbbr = { fg = colors.pmenu_fg, bg = "#2e303e" },
-		CmpItemAbbrDeprecated = { fg = colors.fg_dark, bg = "#2e303e", strikethrough = true },
-		CmpItemAbbrMatch = { fg = colors.function_name, bg = "#2e303e", bold = true },
-		CmpItemAbbrMatchFuzzy = { fg = colors.function_name, bg = "#2e303e" },
-		CmpItemKind = { fg = colors.type, bg = "#2e303e" },
-		CmpItemMenu = { fg = colors.fg_dark, bg = "#2e303e" },
+		-- Completion menu kinds
+		CmpItemAbbr = { fg = colors.pmenu_fg },
+		CmpItemAbbrDeprecated = { fg = colors.fg_dark, strikethrough = true },
+		CmpItemAbbrMatch = { fg = colors.function_name, bold = true },
+		CmpItemAbbrMatchFuzzy = { fg = colors.function_name },
+		CmpItemKind = { fg = colors.type },
+		CmpItemMenu = { fg = colors.fg_dark },
 
 		-- Scrollbar
 		ScrollbarHandle = { bg = colors.scrollbar_thumb },

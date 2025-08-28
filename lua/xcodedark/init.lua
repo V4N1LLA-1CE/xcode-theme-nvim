@@ -196,19 +196,6 @@ function M.load(opts)
 		vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.border, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TerminalNormal", { fg = colors.fg, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TerminalNormalFloat", { fg = colors.fg, bg = "NONE" })
-
-		-- Force autocompletion background to override transparency
-		vim.api.nvim_set_hl(0, "Pmenu", { fg = colors.pmenu_fg, bg = "#2e303e" })
-		vim.api.nvim_set_hl(0, "PmenuSel", { fg = colors.pmenu_sel_fg, bg = colors.pmenu_sel_bg })
-		vim.api.nvim_set_hl(0, "PmenuSbar", { bg = "#2e303e" })
-		vim.api.nvim_set_hl(0, "PmenuThumb", { bg = colors.scrollbar_thumb })
-		
-		-- Also override nvim-cmp highlights for consistency
-		vim.api.nvim_set_hl(0, "CmpItemAbbr", { fg = colors.pmenu_fg, bg = "#2e303e" })
-		vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { fg = colors.function_name, bg = "#2e303e", bold = true })
-		vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { fg = colors.function_name, bg = "#2e303e" })
-		vim.api.nvim_set_hl(0, "CmpItemKind", { fg = colors.type, bg = "#2e303e" })
-		vim.api.nvim_set_hl(0, "CmpItemMenu", { fg = colors.fg_dark, bg = "#2e303e" })
 	end
 
 	-- CURSOR COLOR OVERRIDE SECTION
