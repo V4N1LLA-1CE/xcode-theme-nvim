@@ -6,16 +6,16 @@ NOTE: This theme works best in transparent mode as shown in the screenshots
 
 ## Language Previews
 ### Go
-<img width="1512" height="982" alt="go" src="https://github.com/user-attachments/assets/c0b4effc-9c22-4a64-883f-946572453d67" />
+<img width="1512" height="982" alt="go" src="https://github.com/user-attachments/assets/83af0207-f1cc-4845-8902-4960664eba41" />
 
 ### Elixir
-<img width="1512" height="982" alt="elixir" src="https://github.com/user-attachments/assets/76bf3d32-6d9c-47de-9236-e8fc5ed65e72" />
+<img width="1512" height="982" alt="elixir" src="https://github.com/user-attachments/assets/30ba09be-e8bf-4a9b-8723-d16a06dec791" />
 
 ### Typescript/React
-<img width="1512" height="982" alt="react" src="https://github.com/user-attachments/assets/7ea0683c-8533-475f-b1d1-b10b95120a39" />
+<img width="1512" height="982" alt="typescript" src="https://github.com/user-attachments/assets/4b63c07c-957d-4911-b0d1-e7a8eb7f9f6b" />
 
 ### Java
-<img width="1512" height="982" alt="java" src="https://github.com/user-attachments/assets/9834399b-f52f-4159-bd7d-297c34db00fc" />
+<img width="1512" height="982" alt="java" src="https://github.com/user-attachments/assets/fcb84c75-595a-4ed4-ae31-9d42a412b97f" />
 
 ## Installation
 
