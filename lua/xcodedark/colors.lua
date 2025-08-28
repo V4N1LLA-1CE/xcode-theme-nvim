@@ -26,7 +26,6 @@ local colors = {
 
 	-- Additional purple for specific contexts
 	purple = "#D2A8FF", -- Xcode-style lighter purple for parameters/argument types
-	purple_light = "#E5C7FF", -- Even lighter purple variant
 
 	-- Language-specific elements
 	preprocessor = "#FF7AB2", -- Preprocessor directives, imports - Pink like keywords
@@ -44,13 +43,11 @@ local colors = {
 	cursor_line = "#2D2D30", -- Current line highlight
 	selection = "#636f83", -- New selection background color
 	visual = "#636f83", -- Visual selection background (keep original for text selection)
-	visual_light = "#3D5A7A", -- Lighter visual selection
 	search = "#613315", -- Search match background
 	search_fg = "#FFCC02", -- Search match text
 
 	-- Gutter and line numbers
 	line_number = "#858585", -- Line numbers
-	line_number_current = "#FFFFFF", -- Current line number
 	gutter_bg = "#292a31", -- Updated gutter background to match new bg
 
 	-- Borders and UI chrome
@@ -98,7 +95,6 @@ local colors = {
 	pmenu_scrollbar = "#3E3E42", -- Popup menu scrollbar (lighter for visibility)
 
 	-- Additional UI elements
-	scrollbar = "#424242", -- Scrollbar track
 	scrollbar_thumb = "#686868", -- Scrollbar thumb
 
 	-- Code folding
