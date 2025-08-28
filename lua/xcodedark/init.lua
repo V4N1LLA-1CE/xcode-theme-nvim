@@ -74,7 +74,8 @@ function M.load(opts)
 		colors.status_bg = "NONE"
 		colors.tab_active_bg = "NONE"
 		colors.tab_inactive_bg = "NONE"
-		colors.pmenu_bg = "NONE"
+		-- Keep popup menu background solid even in transparent mode for better readability
+		-- colors.pmenu_bg = "NONE"  -- Commented out to keep solid background
 		colors.fold_bg = "NONE"
 		-- Also make incline and which-key transparent
 		colors.bg_highlight = "NONE"
@@ -163,11 +164,40 @@ function M.load(opts)
 		vim.g.terminal_color_15 = colors.terminal_bright_white
 	end
 
+	-- Enhanced autocomplete menu styling (always applied for better appearance)
+	vim.api.nvim_set_hl(0, "Pmenu", { 
+		fg = colors.pmenu_fg, 
+		bg = colors.pmenu_bg,
+		blend = 15  -- Slight transparency for better visual integration
+	})
+	vim.api.nvim_set_hl(0, "PmenuSel", { 
+		fg = colors.pmenu_sel_fg, 
+		bg = colors.pmenu_sel_bg,
+		bold = true  -- Make selected item more prominent
+	})
+	vim.api.nvim_set_hl(0, "PmenuSbar", { 
+		bg = colors.pmenu_scrollbar
+	})
+	vim.api.nvim_set_hl(0, "PmenuThumb", { 
+		bg = colors.scrollbar_thumb
+	})
+	
+	-- Enhanced completion menu styling with borders
+	vim.api.nvim_set_hl(0, "FloatBorder", { 
+		fg = colors.border, 
+		bg = opts.transparent and "NONE" or colors.bg_light 
+	})
+	vim.api.nvim_set_hl(0, "NormalFloat", { 
+		fg = colors.fg, 
+		bg = opts.transparent and colors.pmenu_bg or colors.bg_light 
+	})
+
 	-- Apply additional transparency fixes for specific elements
 	if opts.transparent then
 		-- Force transparency for problematic highlights
 		vim.api.nvim_set_hl(0, "Normal", { fg = colors.fg, bg = "NONE" })
-		vim.api.nvim_set_hl(0, "NormalFloat", { fg = colors.fg, bg = "NONE" })
+		-- Keep NormalFloat with solid background for better autocomplete visibility
+		vim.api.nvim_set_hl(0, "NormalFloat", { fg = colors.fg, bg = colors.pmenu_bg })
 		vim.api.nvim_set_hl(0, "FloatBorder", { fg = colors.border, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
 		vim.api.nvim_set_hl(0, "FoldColumn", { fg = colors.line_number, bg = "NONE" })

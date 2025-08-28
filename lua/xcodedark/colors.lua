@@ -90,12 +90,12 @@ local colors = {
 	fixme = "#F14C4C", -- FIXME comments - Red
 	note = "#0099FF", -- NOTE comments - Blue
 
-	-- Completion and popup menus
-	pmenu_bg = "#252526", -- Popup menu background
+	-- Completion and popup menus (enhanced for better visibility)
+	pmenu_bg = "#1E1E1E", -- Popup menu background (darker for better contrast)
 	pmenu_fg = "#CCCCCC", -- Popup menu text
-	pmenu_sel_bg = "#094771", -- Selected popup item background
+	pmenu_sel_bg = "#0E639C", -- Selected popup item background (brighter blue)
 	pmenu_sel_fg = "#FFFFFF", -- Selected popup item text
-	pmenu_scrollbar = "#424242", -- Popup menu scrollbar
+	pmenu_scrollbar = "#3E3E42", -- Popup menu scrollbar (lighter for visibility)
 
 	-- Additional UI elements
 	scrollbar = "#424242", -- Scrollbar track

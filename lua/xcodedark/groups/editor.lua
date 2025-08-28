@@ -63,13 +63,13 @@ function M.setup(colors)
 		PmenuSbar = { bg = colors.pmenu_scrollbar },
 		PmenuThumb = { bg = colors.scrollbar_thumb },
 
-		-- Completion menu kinds
+		-- Completion menu kinds (enhanced styling)
 		CmpItemAbbr = { fg = colors.pmenu_fg },
 		CmpItemAbbrDeprecated = { fg = colors.fg_dark, strikethrough = true },
 		CmpItemAbbrMatch = { fg = colors.function_name, bold = true },
-		CmpItemAbbrMatchFuzzy = { fg = colors.function_name },
-		CmpItemKind = { fg = colors.type },
-		CmpItemMenu = { fg = colors.fg_dark },
+		CmpItemAbbrMatchFuzzy = { fg = colors.function_name, bold = true },
+		CmpItemKind = { fg = colors.type, bold = true },
+		CmpItemMenu = { fg = colors.fg_dark, italic = true },
 
 		-- Completion item kinds with syntax highlighting
 		CmpItemKindText = { fg = colors.fg },
