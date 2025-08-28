@@ -4,19 +4,20 @@ A neovim theme that mimics xcodedark from xcode16. I was inspired by xcode theme
 
 NOTE: This theme works best in transparent mode as shown in the screenshots
 
-## Go Development
+## Language Previews
+### Go
 <img width="1512" height="982" alt="go" src="https://github.com/user-attachments/assets/c0b4effc-9c22-4a64-883f-946572453d67" />
 
-## Elixir
+### Elixir
 <img width="1512" height="982" alt="elixir" src="https://github.com/user-attachments/assets/76bf3d32-6d9c-47de-9236-e8fc5ed65e72" />
 
-## Typescript/React Development
+### Typescript/React
 <img width="1512" height="982" alt="react" src="https://github.com/user-attachments/assets/7ea0683c-8533-475f-b1d1-b10b95120a39" />
 
-## Java
+### Java
 <img width="1512" height="982" alt="java" src="https://github.com/user-attachments/assets/9834399b-f52f-4159-bd7d-297c34db00fc" />
 
-## 📦 Installation
+## Installation
 
 ### LazyVim
 
@@ -81,7 +82,7 @@ use {
 ```
 
 
-## ⚙️ Configuration
+## Configuration
 
 ### Default Options
 
@@ -124,7 +125,7 @@ require("xcodedark").setup({
 })
 ```
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit issues and pull requests.
 
@@ -133,7 +134,7 @@ When reporting issues, please include:
 - Screenshots if applicable
 - Minimal reproduction steps
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Inspired by Xcode 16's Default Dark theme. Created during iOS development coursework when I fell in love with Xcode's clean syntax highlighting.
 
