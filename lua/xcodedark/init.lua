@@ -226,6 +226,18 @@ function M.load(opts)
 		vim.api.nvim_set_hl(0, "LazyGitBorder", { fg = colors.border, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TerminalNormal", { fg = colors.fg, bg = "NONE" })
 		vim.api.nvim_set_hl(0, "TerminalNormalFloat", { fg = colors.fg, bg = "NONE" })
+
+		-- Enhanced telescope borders for transparent mode (keep backgrounds transparent, make borders pop)
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { fg = colors.function_name })
+		vim.api.nvim_set_hl(0, "TelescopeTitle", { fg = colors.keyword, bold = true })
+		vim.api.nvim_set_hl(0, "TelescopePromptBorder", { fg = colors.type })
+		vim.api.nvim_set_hl(0, "TelescopePromptTitle", { fg = colors.string, bold = true })
+		vim.api.nvim_set_hl(0, "TelescopePromptPrefix", { fg = colors.keyword, bold = true })
+		vim.api.nvim_set_hl(0, "TelescopeResultsBorder", { fg = colors.constant })
+		vim.api.nvim_set_hl(0, "TelescopeResultsTitle", { fg = colors.purple, bold = true })
+		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = colors.attribute })
+		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = colors.number, bold = true })
+		vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { fg = colors.keyword, bold = true })
 	end
 
 	-- CURSOR COLOR OVERRIDE SECTION
