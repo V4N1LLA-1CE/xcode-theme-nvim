@@ -93,7 +93,7 @@ local colors = {
 	-- Completion and popup menus (enhanced for better visibility)
 	pmenu_bg = "#454167", -- Popup menu background (darker for better contrast)
 	pmenu_fg = "#CCCCCC", -- Popup menu text
-	pmenu_sel_bg = "#E91E63", -- Selected popup item background (brighter blue)
+	pmenu_sel_bg = "#FF7AB2", -- Selected popup item background (brighter blue) "#E91E63"
 	pmenu_sel_fg = "#FFFFFF", -- Selected popup item text
 	pmenu_scrollbar = "#3E3E42", -- Popup menu scrollbar (lighter for visibility)
 
