@@ -2,22 +2,22 @@ local M = {}
 
 function M.setup(colors)
 	local highlights = {
-		-- Telescope main window
+		-- Telescope main window (enhanced with Xcode-style colors)
 		TelescopeNormal = { fg = colors.fg, bg = colors.bg_light },
-		TelescopeBorder = { fg = colors.border, bg = colors.bg_light },
-		TelescopeTitle = { fg = colors.function_name, bg = colors.bg_light, bold = true },
+		TelescopeBorder = { fg = colors.function_name, bg = colors.bg_light }, -- Use green border like Xcode
+		TelescopeTitle = { fg = colors.keyword, bg = colors.bg_light, bold = true }, -- Pink title for pop
 
-		-- Telescope prompt
+		-- Telescope prompt (more vibrant)
 		TelescopePromptNormal = { fg = colors.fg, bg = colors.bg_dark },
-		TelescopePromptBorder = { fg = colors.border, bg = colors.bg_dark },
-		TelescopePromptTitle = { fg = colors.function_name, bg = colors.bg_dark, bold = true },
-		TelescopePromptPrefix = { fg = colors.function_name, bg = colors.bg_dark },
-		TelescopePromptCounter = { fg = colors.fg_dark, bg = colors.bg_dark },
+		TelescopePromptBorder = { fg = colors.type, bg = colors.bg_dark }, -- Light blue border
+		TelescopePromptTitle = { fg = colors.string, bg = colors.bg_dark, bold = true }, -- Coral title
+		TelescopePromptPrefix = { fg = colors.keyword, bg = colors.bg_dark, bold = true }, -- Pink prefix
+		TelescopePromptCounter = { fg = colors.number, bg = colors.bg_dark }, -- Yellow counter
 
-		-- Telescope results
+		-- Telescope results (enhanced styling)
 		TelescopeResultsNormal = { fg = colors.fg, bg = colors.bg_light },
-		TelescopeResultsBorder = { fg = colors.border, bg = colors.bg_light },
-		TelescopeResultsTitle = { fg = colors.function_name, bg = colors.bg_light, bold = true },
+		TelescopeResultsBorder = { fg = colors.constant, bg = colors.bg_light }, -- Cyan border
+		TelescopeResultsTitle = { fg = colors.purple, bg = colors.bg_light, bold = true }, -- Purple title
 		TelescopeResultsComment = { fg = colors.comment },
 		TelescopeResultsSpecialComment = { fg = colors.comment, italic = true },
 		TelescopeResultsLineNr = { fg = colors.line_number },
@@ -34,10 +34,10 @@ function M.setup(colors)
 		TelescopeResultsMethod = { fg = colors.function_name },
 		TelescopeResultsStruct = { fg = colors.type },
 
-		-- Telescope preview
+		-- Telescope preview (vibrant borders)
 		TelescopePreviewNormal = { fg = colors.fg, bg = colors.bg },
-		TelescopePreviewBorder = { fg = colors.border, bg = colors.bg },
-		TelescopePreviewTitle = { fg = colors.function_name, bg = colors.bg, bold = true },
+		TelescopePreviewBorder = { fg = colors.attribute, bg = colors.bg }, -- Orange border for preview
+		TelescopePreviewTitle = { fg = colors.number, bg = colors.bg, bold = true }, -- Yellow title
 		TelescopePreviewLine = { bg = colors.cursor_line },
 		TelescopePreviewMatch = { fg = colors.search_fg, bg = colors.search },
 		TelescopePreviewPipe = { fg = colors.operator },
@@ -56,12 +56,12 @@ function M.setup(colors)
 		TelescopePreviewGroup = { fg = colors.type },
 		TelescopePreviewDate = { fg = colors.comment },
 
-		-- Telescope selection and matching
+		-- Telescope selection and matching (enhanced visibility)
 		TelescopeSelection = { fg = colors.fg, bg = colors.selection, bold = true },
-		TelescopeSelectionCaret = { fg = colors.function_name, bg = colors.selection },
+		TelescopeSelectionCaret = { fg = colors.keyword, bg = colors.selection, bold = true }, -- Pink caret
 		TelescopeMultiSelection = { fg = colors.fg, bg = colors.selection },
-		TelescopeMultiIcon = { fg = colors.function_name },
-		TelescopeMatching = { fg = colors.search_fg, bold = true },
+		TelescopeMultiIcon = { fg = colors.string, bold = true }, -- Coral multi-select icon
+		TelescopeMatching = { fg = colors.number, bg = colors.search, bold = true }, -- Yellow matching with background
 
 		-- Telescope file browser specific
 		TelescopePathSeparator = { fg = colors.fg_dark },
