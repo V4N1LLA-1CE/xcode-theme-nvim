@@ -16,7 +16,6 @@ NOTE: This theme works best in transparent mode as shown in the screenshots
 ## Java
 <img width="1512" height="982" alt="java" src="https://github.com/user-attachments/assets/9834399b-f52f-4159-bd7d-297c34db00fc" />
 
-
 ## 📦 Installation
 
 ### LazyVim
