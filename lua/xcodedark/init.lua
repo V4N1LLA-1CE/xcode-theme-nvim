@@ -240,6 +240,10 @@ function M.load(opts)
 		vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { fg = colors.keyword, bold = true })
 		vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = colors.fg, bg = colors.selection, bold = true })
 		vim.api.nvim_set_hl(0, "TelescopeMultiSelection", { fg = colors.fg, bg = colors.selection })
+		
+		-- Fix nvimtree selection transparency
+		vim.api.nvim_set_hl(0, "NvimTreeCursorLine", { bg = colors.selection })
+		vim.api.nvim_set_hl(0, "NvimTreeCursorColumn", { bg = colors.selection })
 	end
 
 	-- CURSOR COLOR OVERRIDE SECTION
