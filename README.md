@@ -2,15 +2,20 @@
 
 A neovim theme that mimics xcodedark from xcode16. I was inspired by xcode theme as I thought it was super clean in my iOS development course in university, so I decided to make a version that is kind of accurate for my main languages (Go, Typescript, and hopefully Java soon). 
 
-NOTE: The theme will work for other languages as well, but colour usage for language features may not be accurate to xcode outside of Go and Typescript.
+NOTE: This theme works best in transparent mode as shown in the screenshots
 
 ## Go Development
-<img width="1507" height="889" alt="Screenshot 2025-08-02 at 10 42 41 pm" src="https://github.com/user-attachments/assets/43bf2372-e33e-4210-a7d5-e64516d27d81" />
-<img width="1507" height="889" alt="Screenshot 2025-08-02 at 10 43 43 pm" src="https://github.com/user-attachments/assets/f43243de-732c-4ea5-945d-b7715e6927ab" />
+<img width="1512" height="982" alt="go" src="https://github.com/user-attachments/assets/c0b4effc-9c22-4a64-883f-946572453d67" />
+
+## Elixir
+<img width="1512" height="982" alt="elixir" src="https://github.com/user-attachments/assets/76bf3d32-6d9c-47de-9236-e8fc5ed65e72" />
 
 ## Typescript/React Development
-<img width="1507" height="889" alt="Screenshot 2025-08-02 at 10 44 00 pm" src="https://github.com/user-attachments/assets/fb268289-5189-446b-b28a-6c757625f801" />
-<img width="1507" height="889" alt="Screenshot 2025-08-02 at 10 44 22 pm" src="https://github.com/user-attachments/assets/c7d54412-1f9a-4e57-87f5-dee313c69167" />
+<img width="1512" height="982" alt="react" src="https://github.com/user-attachments/assets/7ea0683c-8533-475f-b1d1-b10b95120a39" />
+
+## Java
+<img width="1512" height="982" alt="java" src="https://github.com/user-attachments/assets/9834399b-f52f-4159-bd7d-297c34db00fc" />
+
 
 ## 📦 Installation
 
@@ -120,31 +125,6 @@ require("xcodedark").setup({
 })
 ```
 
-## 🎨 Color Palette
-
-The theme uses authentic Xcode 16 colors:
-
-| Element | Color | Hex |
-|---------|-------|-----|
-| Background | Dark Gray | `#1E1E1E` |
-| Foreground | White | `#FFFFFF` |
-| Keywords | Pink | `#FF7AB2` |
-| Strings | Coral | `#FF8170` |
-| Comments | Gray | `#6C7986` |
-| Numbers | Yellow | `#D9C97C` |
-| Functions | Green | `#67B7A4` |
-| Types | Light Blue | `#6BDFFF` |
-| Parameters | Purple | `#D2A8FF` |
-| Constants | Blue | `#4EB0CC` |
-
-## 🌍 Language Support
-
-Optimised syntax highlighting for:
-
-- **Go** - Clean, readable syntax with proper type highlighting
-- **JavaScript/TypeScript** - React/JSX support with component highlighting
-- **Lua** - Neovim configuration scripting
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit issues and pull requests.
@@ -155,7 +135,6 @@ When reporting issues, please include:
 - Minimal reproduction steps
 
 ## 🙏 Acknowledgments
-
 
 Inspired by Xcode 16's Default Dark theme. Created during iOS development coursework when I fell in love with Xcode's clean syntax highlighting.
 
