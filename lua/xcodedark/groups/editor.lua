@@ -71,6 +71,11 @@ function M.setup(colors)
 		CmpItemKind = { fg = colors.type, bg = "#2e303e" },
 		CmpItemMenu = { fg = colors.fg_dark, bg = "#2e303e" },
 
+		-- Completion menu borders (for nvim-cmp rounded borders)
+		CmpBorder = { fg = "#5a5d6e", bg = "#2e303e" },
+		CmpDocumentationBorder = { fg = "#5a5d6e", bg = colors.bg_light },
+		CmpDocumentation = { fg = colors.fg, bg = colors.bg_light },
+
 		-- Scrollbar
 		ScrollbarHandle = { bg = colors.scrollbar_thumb },
 
