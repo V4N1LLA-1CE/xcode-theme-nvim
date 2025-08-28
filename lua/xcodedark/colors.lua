@@ -91,11 +91,11 @@ local colors = {
 	note = "#0099FF", -- NOTE comments - Blue
 
 	-- Completion and popup menus (enhanced for better visibility)
-	pmenu_bg = "#e38db3", -- Popup menu background (darker for better contrast)
+	pmenu_bg = "#b4708e", -- Popup menu background (darker for better contrast)
 	pmenu_fg = "#CCCCCC", -- Popup menu text
 	pmenu_sel_bg = "#E91E63", -- Selected popup item background (brighter blue)
 	pmenu_sel_fg = "#FFFFFF", -- Selected popup item text
-	pmenu_scrollbar = "#3E3E42", -- Popup menu scrollbar (lighter for visibility)
+	pmenu_scrollbar = "#e38db3", -- Popup menu scrollbar (lighter for visibility)
 
 	-- Additional UI elements
 	scrollbar = "#424242", -- Scrollbar track
