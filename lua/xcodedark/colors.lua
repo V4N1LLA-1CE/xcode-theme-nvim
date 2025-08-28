@@ -39,10 +39,10 @@ local colors = {
 	objc_directive = "#FF7AB2", -- #pragma, #import - Pink like keywords
 
 	-- UI Elements (Updated)
-	cursor = "#E91E63", -- New cursor color (red)
+	cursor = "#ff5257", -- New cursor color (red)
 	cursor_visual = "#8cd0e3", -- Cursor colour for visual mode (light blue)
 	cursor_line = "#2D2D30", -- Current line highlight
-	selection = "#E91E63", -- New selection background color
+	selection = "#636f83", -- New selection background color
 	visual = "#636f83", -- Visual selection background (keep original for text selection)
 	visual_light = "#3D5A7A", -- Lighter visual selection
 	search = "#613315", -- Search match background
