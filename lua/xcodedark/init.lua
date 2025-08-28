@@ -238,6 +238,8 @@ function M.load(opts)
 		vim.api.nvim_set_hl(0, "TelescopePreviewBorder", { fg = colors.attribute })
 		vim.api.nvim_set_hl(0, "TelescopePreviewTitle", { fg = colors.number, bold = true })
 		vim.api.nvim_set_hl(0, "TelescopeSelectionCaret", { fg = colors.keyword, bold = true })
+		vim.api.nvim_set_hl(0, "TelescopeSelection", { fg = colors.fg, bg = colors.selection, bold = true })
+		vim.api.nvim_set_hl(0, "TelescopeMultiSelection", { fg = colors.fg, bg = colors.selection })
 	end
 
 	-- CURSOR COLOR OVERRIDE SECTION
