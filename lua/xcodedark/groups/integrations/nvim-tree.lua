@@ -8,8 +8,8 @@ function M.setup(colors)
 		NvimTreeEndOfBuffer = { fg = colors.bg_alt, bg = colors.bg_alt },
 		NvimTreeWinSeparator = { fg = colors.separator, bg = colors.separator },
 		NvimTreeVertSplit = { fg = colors.separator, bg = colors.separator },
-		NvimTreeCursorLine = { bg = colors.cursor_line },
-		NvimTreeCursorColumn = { bg = colors.cursor_line },
+		NvimTreeCursorLine = { bg = colors.selection },
+		NvimTreeCursorColumn = { bg = colors.selection },
 
 		-- File and folder icons
 		NvimTreeSymlink = { fg = colors.info },

@@ -57,9 +57,9 @@ function M.setup(colors)
 		TelescopePreviewDate = { fg = colors.comment },
 
 		-- Telescope selection and matching
-		TelescopeSelection = { fg = colors.fg, bg = colors.visual, bold = true },
-		TelescopeSelectionCaret = { fg = colors.function_name, bg = colors.visual },
-		TelescopeMultiSelection = { fg = colors.fg, bg = colors.visual_light },
+		TelescopeSelection = { fg = colors.fg, bg = colors.selection, bold = true },
+		TelescopeSelectionCaret = { fg = colors.function_name, bg = colors.selection },
+		TelescopeMultiSelection = { fg = colors.fg, bg = colors.selection },
 		TelescopeMultiIcon = { fg = colors.function_name },
 		TelescopeMatching = { fg = colors.search_fg, bold = true },
 
