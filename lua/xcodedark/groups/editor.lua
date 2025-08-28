@@ -71,6 +71,33 @@ function M.setup(colors)
 		CmpItemKind = { fg = colors.type },
 		CmpItemMenu = { fg = colors.fg_dark },
 
+		-- Completion item kinds with syntax highlighting
+		CmpItemKindText = { fg = colors.fg },
+		CmpItemKindMethod = { fg = colors.function_name },
+		CmpItemKindFunction = { fg = colors.function_name },
+		CmpItemKindConstructor = { fg = colors.function_name },
+		CmpItemKindField = { fg = colors.property },
+		CmpItemKindVariable = { fg = colors.variable },
+		CmpItemKindClass = { fg = colors.type },
+		CmpItemKindInterface = { fg = colors.type },
+		CmpItemKindModule = { fg = colors.type },
+		CmpItemKindProperty = { fg = colors.property },
+		CmpItemKindUnit = { fg = colors.constant },
+		CmpItemKindValue = { fg = colors.constant },
+		CmpItemKindEnum = { fg = colors.type },
+		CmpItemKindKeyword = { fg = colors.keyword },
+		CmpItemKindSnippet = { fg = colors.string },
+		CmpItemKindColor = { fg = colors.string },
+		CmpItemKindFile = { fg = colors.fg },
+		CmpItemKindReference = { fg = colors.fg },
+		CmpItemKindFolder = { fg = colors.function_name },
+		CmpItemKindEnumMember = { fg = colors.constant },
+		CmpItemKindConstant = { fg = colors.constant },
+		CmpItemKindStruct = { fg = colors.type },
+		CmpItemKindEvent = { fg = colors.function_name },
+		CmpItemKindOperator = { fg = colors.operator },
+		CmpItemKindTypeParameter = { fg = colors.parameter },
+
 		-- Scrollbar
 		ScrollbarHandle = { bg = colors.scrollbar_thumb },
 
