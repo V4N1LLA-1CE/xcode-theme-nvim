@@ -12,7 +12,6 @@ local default_options = {
 		which_key = true, -- For which-key popup
 		notify = true, -- For nvim-notify
 		snacks = true, -- For snacks.nvim picker
-		blink = true, -- For blink.cmp completion
 	},
 	-- Style options
 	styles = {
@@ -151,16 +150,6 @@ function M.load(opts)
 		if ok then
 			local snacks_highlights = require("xcodedark.groups.integrations.snacks").setup()
 			for group, hl in pairs(snacks_highlights) do
-				vim.api.nvim_set_hl(0, group, hl)
-			end
-		end
-	end
-
-	if opts.integrations.blink then
-		local ok, _ = pcall(require, "xcodedark.groups.integrations.blink")
-		if ok then
-			local blink_highlights = require("xcodedark.groups.integrations.blink").setup()
-			for group, hl in pairs(blink_highlights) do
 				vim.api.nvim_set_hl(0, group, hl)
 			end
 		end
