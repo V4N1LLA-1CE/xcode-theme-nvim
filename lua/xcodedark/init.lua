@@ -11,6 +11,7 @@ local default_options = {
 		lazygit = true, -- For lazygit integration
 		which_key = true, -- For which-key popup
 		notify = true, -- For nvim-notify
+		snacks = true, -- For snacks.nvim picker
 	},
 	-- Style options
 	styles = {
@@ -141,6 +142,16 @@ function M.load(opts)
 		local ok, _ = pcall(require, "xcodedark.groups.integrations.notify")
 		if ok then
 			require("xcodedark.groups.integrations.notify").setup(colors)
+		end
+	end
+
+	if opts.integrations.snacks then
+		local ok, _ = pcall(require, "xcodedark.groups.integrations.snacks")
+		if ok then
+			local snacks_highlights = require("xcodedark.groups.integrations.snacks").setup()
+			for group, hl in pairs(snacks_highlights) do
+				vim.api.nvim_set_hl(0, group, hl)
+			end
 		end
 	end
 
