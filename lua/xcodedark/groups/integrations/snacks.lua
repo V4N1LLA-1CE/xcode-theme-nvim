@@ -14,12 +14,12 @@ M.setup = function()
 		-- Picker UI elements
 		SnacksPickerPrompt = { fg = colors.keyword, bold = true }, -- Pink prompt
 		SnacksPickerMatch = { fg = colors.search_fg, bg = colors.search, bold = true }, -- Yellow matches
-		SnacksPickerBorder = { fg = colors.border },
+		SnacksPickerBorder = { fg = colors.function_name, bold = true }, -- Green borders
 		SnacksPickerList = { fg = colors.fg, bg = colors.bg_light },
 		SnacksPickerListCursorLine = { bg = colors.bg_highlight },
-		SnacksPickerTitle = { fg = colors.function_name, bold = true }, -- Green title
+		SnacksPickerTitle = { fg = colors.keyword, bold = true }, -- Pink title
 		SnacksPickerPreview = { fg = colors.fg },
-		SnacksPickerPreviewBorder = { fg = colors.border },
+		SnacksPickerPreviewBorder = { fg = colors.attribute, bold = true }, -- Orange preview border
 		
 		-- Git status highlights (vibrant colors)
 		SnacksPickerGitStatusStaged = { fg = colors.git_add, bold = true },
@@ -79,7 +79,7 @@ M.setup = function()
 		SnacksPickerIcon = { fg = colors.function_name }, -- Default icon color
 		SnacksPickerInfo = { fg = colors.info },
 		SnacksPickerInput = { fg = colors.fg, bg = colors.bg_light },
-		SnacksPickerInputBorder = { fg = colors.keyword }, -- Pink border for input
+		SnacksPickerInputBorder = { fg = colors.constant, bold = true }, -- Light blue border for input
 		SnacksPickerInputPrompt = { fg = colors.keyword, bold = true }, -- Pink prompt
 		SnacksPickerLine = { fg = colors.fg },
 		SnacksPickerSelect = { fg = colors.selection, bold = true },
