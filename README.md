@@ -2,7 +2,7 @@
 
 A neovim theme that mimics xcodedark from xcode16. I was inspired by xcode theme as I thought it was super clean in my iOS development course in university, so I decided to make a version that is kind of accurate for my main languages (Go, Typescript, and hopefully Java soon). 
 
-NOTE: This theme works best in transparent mode as shown in the screenshots
+NOTE: This theme works best in transparent mode as shown in the screenshots. In order to get the same autocomplete menu as the screenshots, check my `blink-configuration.lua` in [dotfiles](https://github.com/V4N1LLA-1CE/dotfiles)
 
 ## Language Previews
 ### Go
